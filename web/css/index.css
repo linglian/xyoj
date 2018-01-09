@@ -1,0 +1,43 @@
+#codes{
+    height: 550px;
+    width: 100%;
+}
+
+#inputTest{
+    height: 100px;
+    width: 100%;
+}
+
+#outputTest{
+    height: 100px;
+    width: 100%;
+}
+
+.leftul {
+    width: 100%;
+    margin-left: 15%;
+}
+
+.leftul li{
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.leftul2{
+    width:100%;
+}
+
+.leftul2 li{
+    width: 50%;
+    float: left;
+}
+
+.leftul li a{
+}
+
+.down{
+    border: 2px solid black;
+    height: 220px;
+    border-color: black;
+}

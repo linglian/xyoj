@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/OJ/XYOJ.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/web/coder.jsp</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/factoryImpl/IQuestionFactoryImpl.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/dao/ICoderDao.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/db/DBMan.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/数据库链接信息.properties</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/daoImpl/IQuestionDaoImpl.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/daoImpl/ICoderDaoImpl.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/service/IQuestionService.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/web/coderList.jsp</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/db/DBMap.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/daoImpl/IInputAndOutputDaoImpl.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/entity/Question.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/OJ/conf.properties</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/web/login.jsp</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/OJ/XYOJQueue.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/web/index.jsp</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/service/ICoderService.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/action/CoderAction.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/entity/User.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/dao/IInputAndOutputDao.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/entity/Coder.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/entity/InputAndOutput.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/serviceImpl/ICoderServiceImpl.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/factoryImpl/ICoderFactoryImpl.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/dao/IQuestionDao.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/src/java/com/oj/linglian/serviceImpl/IQuestionServiceImpl.java</file>
+            <file>file:/C:/Users/lol/Documents/NetBeansProjects/在线编译C语言/web/question.jsp</file>
+        </group>
+    </open-files>
+</project-private>
