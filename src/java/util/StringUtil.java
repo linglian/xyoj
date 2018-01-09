@@ -17,7 +17,13 @@ public class StringUtil {
 
     public static String subInt(String a, String b) {
         try {
-        return String.valueOf(Integer.parseInt(a) - Integer.parseInt(b));
+            if (a == null || "".equals(a)) {
+                a = "0";
+            }
+            if (b == null || "".equals(b)) {
+                b = "0";
+            }
+            return String.valueOf(Integer.parseInt(a) - Integer.parseInt(b));
         } catch (Exception ex) {
             System.out.println("StringUtil" + ex.getMessage());
         }
@@ -26,7 +32,13 @@ public class StringUtil {
 
     public static String subDouble(String a, String b) {
         try {
-        return String.valueOf(Double.parseDouble(a) - Double.parseDouble(b));
+            if (a == null || "".equals(a)) {
+                a = "0";
+            }
+            if (b == null || "".equals(b)) {
+                b = "0";
+            }
+            return String.valueOf(Double.parseDouble(a) - Double.parseDouble(b));
         } catch (Exception ex) {
             System.out.println("StringUtil" + ex.getMessage());
         }
@@ -35,7 +47,13 @@ public class StringUtil {
 
     public static String subFloat(String a, String b) {
         try {
-        return String.valueOf(Float.parseFloat(a) - Float.parseFloat(b));
+            if (a == null || "".equals(a)) {
+                a = "0";
+            }
+            if (b == null || "".equals(b)) {
+                b = "0";
+            }
+            return String.valueOf(Float.parseFloat(a) - Float.parseFloat(b));
         } catch (Exception ex) {
             System.out.println("StringUtil" + ex.getMessage());
         }
@@ -44,17 +62,28 @@ public class StringUtil {
 
     public static String subLong(String a, String b) {
         try {
-        return String.valueOf(Long.parseLong(a) - Long.parseLong(b));
+            if (a == null || "".equals(a)) {
+                a = "0";
+            }
+            if (b == null || "".equals(b)) {
+                b = "0";
+            }
+            return String.valueOf(Long.parseLong(a) - Long.parseLong(b));
         } catch (Exception ex) {
             System.out.println("StringUtil" + ex.getMessage());
         }
         return "";
     }
 
-
     public static String addInt(String a, String b) {
         try {
-        return String.valueOf(Integer.parseInt(a) + Integer.parseInt(b));
+            if (a == null || "".equals(a)) {
+                a = "0";
+            }
+            if (b == null || "".equals(b)) {
+                b = "0";
+            }
+            return String.valueOf(Integer.parseInt(a) + Integer.parseInt(b));
         } catch (Exception ex) {
             System.out.println("StringUtil" + ex.getMessage());
         }
@@ -63,7 +92,13 @@ public class StringUtil {
 
     public static String addDouble(String a, String b) {
         try {
-        return String.valueOf(Double.parseDouble(a) + Double.parseDouble(b));
+            if (a == null || "".equals(a)) {
+                a = "0";
+            }
+            if (b == null || "".equals(b)) {
+                b = "0";
+            }
+            return String.valueOf(Double.parseDouble(a) + Double.parseDouble(b));
         } catch (Exception ex) {
             System.out.println("StringUtil" + ex.getMessage());
         }
@@ -72,15 +107,28 @@ public class StringUtil {
 
     public static String addFloat(String a, String b) {
         try {
-        return String.valueOf(Float.parseFloat(a) + Float.parseFloat(b));
+            if (a == null || "".equals(a)) {
+                a = "0";
+            }
+            if (b == null || "".equals(b)) {
+                b = "0";
+            }
+            return String.valueOf(Float.parseFloat(a) + Float.parseFloat(b));
         } catch (Exception ex) {
             System.out.println("StringUtil" + ex.getMessage());
         }
         return "";
     }
+
     public static String addLong(String a, String b) {
         try {
-        return String.valueOf(Long.parseLong(a) + Long.parseLong(b));
+            if (a == null || "".equals(a)) {
+                a = "0";
+            }
+            if (b == null || "".equals(b)) {
+                b = "0";
+            }
+            return String.valueOf(Long.parseLong(a) + Long.parseLong(b));
         } catch (Exception ex) {
             System.out.println("StringUtil" + ex.getMessage());
         }

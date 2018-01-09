@@ -79,7 +79,7 @@
                                             </td>
                                             <td>
                                                     <c:choose>  
-                                                        <c:when test="${empty q.status}">
+                                                        <c:when test="${empty q.status || q.status == 0}">
                                                             正在运行
                                                         </c:when>  
                                                         <c:otherwise>

@@ -110,7 +110,7 @@ public class IQuestionDaoImpl implements IQuestionDao {
     @Override
     public int updateQuestion(Question q) {
         try {
-            String sql = "update question title = ?, body = ?, score = ?, demoCode = ?, rightPeople = ?, mainPeople = ?,"
+            String sql = "update question set title = ?, body = ?, score = ?, demoCode = ?, rightPeople = ?, mainPeople = ?,"
                     + " startTime = ?, endTime = ?, inputFormat = ?, outputFormat = ?, inputTest = ?, outputTest = ?"
                     + " where questionId = ?";
             return DBMan.getInstance().update(sql, q.getTitle(), q.getBody(), q.getScore(), q.getDemoCode(),
