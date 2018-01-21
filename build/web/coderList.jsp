@@ -26,10 +26,6 @@
                     <c:set var="info" value="尚未登录，请登录!" scope="session" />
                     <c:redirect url="login.jsp" />
                 </c:if>
-                <c:if test="${empty applicationScope.coderList}">
-                    <c:set var="info" value="尚未获取提交列表，正在重新获取提交列表!" scope="session" />
-                    <c:redirect url="CoderAction?method=getAllList&coderPage=1&coderLimit=10" />
-                </c:if>
         </head>
         <body>
                 <ul class="layui-nav">

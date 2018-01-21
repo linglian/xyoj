@@ -47,10 +47,6 @@
                     <c:set var="info" value="尚未登录，请登录!" scope="session" />
                     <c:redirect url="login.jsp" />
                 </c:if>
-                <c:if test="${empty applicationScope.questionList}">
-                    <c:set var="info" value="尚未获取题目，正在重新获取题目列表!" scope="session" />
-                    <c:redirect url="QuestionAction?method=getList&questionPage=1&questionLimit=10" />
-                </c:if>
         </head>
         <body>
                 <ul class="layui-nav">

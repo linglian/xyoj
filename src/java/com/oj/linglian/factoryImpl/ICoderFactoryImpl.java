@@ -5,7 +5,7 @@
  */
 package com.oj.linglian.factoryImpl;
 
-import com.linglian.util.ServletUtil;
+import util.ServletUtil;
 import com.oj.linglian.OJ.XYOJQueue;
 import com.oj.linglian.entity.Coder;
 import com.oj.linglian.entity.Question;
@@ -24,10 +24,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import util.ServletCheckBuilder;
 import util.StringUtil;
 
 /**
@@ -66,79 +68,113 @@ public class ICoderFactoryImpl implements IServletFactory {
     }
 
     @Override
-    public void doThing(HttpServletRequest request, HttpServletResponse response, HttpServlet serlvet, String factoryName) throws ServletException, IOException {
+    public void doThing(HttpServletRequest request, HttpServletResponse response, HttpServlet servlet, String factoryName) throws ServletException, IOException {
         if ("getAllList".equals(factoryName)) {
-            this.doGetList(request, response, serlvet);
+            this.doGetList(request, response, servlet);
         } else if ("get".equals(factoryName)) {
-            this.doGet(request, response, serlvet);
+            this.doGet(request, response, servlet);
         } else if ("push".equals(factoryName)) {
-            this.doPush(request, response, serlvet);
+            this.doPush(request, response, servlet);
         }
     }
 
-    public void doPush(HttpServletRequest request, HttpServletResponse response, HttpServlet serlvet) throws ServletException, IOException {
-        String codes = request.getParameter("codes");
-        if (codes == null || "".equals(codes)) {
-            request.getSession().setAttribute("info", "代码不能为空！");
-            ServletUtil.redirect(request, response, "index.jsp");
-        } else {
+    /**
+     * 提交代码
+     * @param request
+     * @param response
+     * @param servlet
+     * @throws ServletException
+     * @throws IOException 
+     */
+    public void doPush(HttpServletRequest request, HttpServletResponse response, HttpServlet servlet) throws ServletException, IOException {
+        Map<String, Object> tMap = new ServletCheckBuilder(request, response, servlet, "push_from")
+                .addNp("codes", "代码不能为空")
+                .addNs("question", "问题不能为空")
+                .addNs("identity", "请重新登录", "login_from")
+                .build();
+        if (tMap != null) {
+            String codes = tMap.get("par_codes").toString();
             Question q = (Question) request.getSession().getAttribute("question");
             User user = (User) request.getSession().getAttribute("identity");
-            Coder coder = new Coder.CoderBuilder()
-                    .setUserId(user.getUserId())
-                    .setQuestionId(q.getQuestionId())
-                    .setCode(codes)
-                    .setTime(String.valueOf(new Date().getTime()))
-                    .setStatus("0")
-                    .build();
-            if (ics.insertCoder(coder) == 0) {
+            Coder coder = new Coder();
+            coder.setUserId(user.getUserId());
+            coder.setQuestionId(q.getQuestionId());
+            coder.setCode(codes);
+            coder.setTime(String.valueOf(new Date().getTime()));
+            coder.setStatus("0");
+            if (ics.insert(coder) == 0) {
                 System.out.println("Insert---" + coder + "更新失败");
             }
             user.setLastCode(codes);
             user.setLastQuestionId(q.getQuestionId());
-            if (ius.updateUser(user) == 0) {
+            if (ius.updateOfUserId(user, user.getUserId()) == 0) {
                 System.out.println("Push---" + user + "更新失败");
             }
             XYOJQueue.getInstance().push(coder);
             q.setMainPeople(StringUtil.addInt(q.getMainPeople(), "1"));
-            if (qis.updateQuestion(q) == 0) {
+            if (qis.updateOfQuestionId(q, q.getQuestionId()) == 0) {
                 System.out.println("Push---" + q + "更新失败");
             }
             ServletUtil.redirect(request, response, "CoderAction?method=getAllList");
         }
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response, HttpServlet serlvet) throws ServletException, IOException {
-        String cid = request.getParameter("coderId");
-        if ("".equals(cid)) {
-            request.getSession().removeAttribute("coder");
-            request.getSession().setAttribute("info", "非法操作");
-            ServletUtil.redirect(request, response, "CoderAction?method=getAllList");
-        } else {
-            Coder c = ics.queryCoderById(cid);
+    /**
+     * 根据编号获取代码
+     * @param request
+     * @param response
+     * @param servlet
+     * @throws ServletException
+     * @throws IOException 
+     */
+    public void doGet(HttpServletRequest request, HttpServletResponse response, HttpServlet servlet) throws ServletException, IOException {
+        Map<String, Object> tMap = new ServletCheckBuilder(request, response, servlet, "get_from")
+                .addNp("coderId", "代码编号不能为空")
+                .addNs("identity", "请重新登录", "login_from")
+                .build();
+        if (tMap != null) {
+            String cid = request.getParameter("coderId");
+            Coder c = ics.getCoderOfCoderId(cid);
             request.getSession().setAttribute("coder", c);
-            request.getSession().setAttribute("showQuestion", qis.queryQuestion(c.getQuestionId()));
-            ServletUtil.forward(request, response, "coder.jsp");
+            request.getSession().setAttribute("showQuestion", qis.getQuestionOfQuestionId(c.getQuestionId()));
+            ServletUtil.forward(request, response, servlet, "get_to");
         }
     }
 
-    public void doGetAll(HttpServletRequest request, HttpServletResponse response, HttpServlet serlvet) throws ServletException, IOException {
+    /**
+     * 获取全部代码
+     * @param request
+     * @param response
+     * @param servlet
+     * @throws ServletException
+     * @throws IOException 
+     */
+    public void doGetAll(HttpServletRequest request, HttpServletResponse response, HttpServlet servlet) throws ServletException, IOException {
         if (new Date().getTime() - time >= speedTime || request.getServletContext().getAttribute("coderList") == null) {
-            request.getServletContext().setAttribute("coderList", ics.queryAllCoder());
+            request.getServletContext().setAttribute("coderList", ics.getCoders(new Coder()));
             List t = (List) request.getServletContext().getAttribute("coderList");
+            XYOJQueue.getInstance().setList(t);
             size = t.size();
             time = new Date().getTime();
             IStatusService iss = new IStatusServiceImpl();
             List<Status> tList = new ArrayList();
             for (int i = -6; i < 3; i++) {
-                tList.add(iss.getStatus(String.valueOf(i)));
+                tList.add(iss.getStatusOfStatusId(String.valueOf(i)));
             }
             request.getServletContext().setAttribute("coderStatus", tList);
         }
     }
 
-    public void doGetList(HttpServletRequest request, HttpServletResponse response, HttpServlet serlvet) throws ServletException, IOException {
-        this.doGetAll(request, response, serlvet);
+    /**
+     * 获取分页代码
+     * @param request
+     * @param response
+     * @param servlet
+     * @throws ServletException
+     * @throws IOException 
+     */
+    public void doGetList(HttpServletRequest request, HttpServletResponse response, HttpServlet servlet) throws ServletException, IOException {
+        this.doGetAll(request, response, servlet);
         int limit = 10;
         int page = 1;
         if ("".equals(request.getParameter("coderLimit"))) {
@@ -162,6 +198,6 @@ public class ICoderFactoryImpl implements IServletFactory {
             }
             request.getSession().setAttribute("coderPage", page);
         }
-        ServletUtil.forward(request, response, serlvet, "getList_to");
+        ServletUtil.forward(request, response, servlet, "getList_to");
     }
 }

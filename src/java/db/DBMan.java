@@ -2,7 +2,6 @@ package db;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintStream;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,9 +13,12 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
-import java.util.Set;
 
 import org.apache.commons.beanutils.BeanUtils;
+
+import util.ArrayUtil;
+import util.ClassUtil;
+import util.SqlUtil;
 
 public class DBMan {
 
@@ -43,7 +45,7 @@ public class DBMan {
         DBMan.path = path;
     }
 
-    private DBMan() throws IOException {
+    private DBMan() {
         reload();
     }
 
@@ -52,10 +54,15 @@ public class DBMan {
      *
      * @throws IOException
      */
-    public void reload() throws IOException {
+    public void reload() {
         InputStream in = DBMan.class.getResourceAsStream(path);
         Properties pro = new Properties();
-        pro.load(in);
+        try {
+            pro.load(in);
+        } catch (IOException e) {
+            System.out.println("数据库连接信息读取失败");
+            e.printStackTrace();
+        }
         isLoadClass = false;
         drivers = pro.getProperty("drivers");
         url = pro.getProperty("url");
@@ -69,7 +76,7 @@ public class DBMan {
      * @return DBMan对象实例
      * @throws IOException
      */
-    public static DBMan getInstance() throws IOException {
+    public static DBMan getInstance() {
         if (instance == null) {
             instance = new DBMan();
         }
@@ -82,13 +89,77 @@ public class DBMan {
      * @param clazz 必须为JavaBean
      * @param sql
      * @param obj 可选参数，每个参数对应sql里的，每一个“？”
-     * @return 传入Class对应的一个实例
+     * @return 传入Class对应的一个实例（出现异常返回null）
      * @throws ClassNotFoundException
      * @throws SQLException
      * @throws InstantiationException
      * @throws InvocationTargetException
      * @throws IllegalAccessException
      */
+    @SuppressWarnings("unchecked")
+    public synchronized <T> T queryByIdNoSqlWithoutThrow(T t, String dataName) {
+        String sql = new SqlUtil().setStatus(SqlUtil.SQL_SELECT)
+                .addBeforeWheres(ClassUtil.getName(t.getClass()))
+                .addDataName(dataName)
+                .addAfterWheres(ClassUtil.getNameNotNull(t)).build();
+        return (T) queryByIdWithoutThrow(t.getClass(), sql,
+                ClassUtil.getValueNotNull(t));
+    }
+
+    @SuppressWarnings("unchecked")
+    public synchronized <T> List<T> queryNoSqlWithoutThrow(T t, String dataName) {
+        String sql = new SqlUtil().setStatus(SqlUtil.SQL_SELECT)
+                .addBeforeWheres(ClassUtil.getName(t.getClass()))
+                .addDataName(dataName)
+                .addAfterWheres(ClassUtil.getNameNotNull(t)).build();
+        return (List<T>) queryWithoutThrow(t.getClass(), sql,
+                ClassUtil.getValueNotNull(t));
+    }
+
+    public synchronized <T> int deleteNoSqlWithoutThrow(T t, String dataName) {
+        String sql = new SqlUtil().setStatus(SqlUtil.SQL_DELETE)
+                .addDataName(dataName)
+                .addAfterWheres(ClassUtil.getNameNotNull(t)).build();
+        return updateWithoutThrow(sql, ClassUtil.getValueNotNull(t));
+    }
+
+    public synchronized <T> int updateNoSqlWithoutThrow(T t, T k, String dataName) {
+        String sql = new SqlUtil().setStatus(SqlUtil.SQL_UPDATE)
+                .addBeforeWheres(ClassUtil.getNameNotNull(t))
+                .addDataName(dataName)
+                .addAfterWheres(ClassUtil.getNameNotNull(k)).build();
+        return updateWithoutThrow(
+                sql,
+                ArrayUtil.multArray(ClassUtil.getValueNotNull(t),
+                        ClassUtil.getValueNotNull(k)));
+    }
+
+    public synchronized <T> int insertNoSqlWithoutThrow(T t, String dataName) {
+        String sql = new SqlUtil().setStatus(SqlUtil.SQL_INSERT)
+                .addBeforeWheres(ClassUtil.getNameNotNull(t))
+                .addDataName(dataName)
+                .addAfterWheres(ClassUtil.getNameNotNull(t)).build();
+        return updateWithoutThrow(sql, ClassUtil.getValueNotNull(t));
+    }
+
+    public synchronized <T> T queryByIdWithoutThrow(Class<T> clazz, String sql,
+            Object... obj) {
+        try {
+            return queryById(clazz, sql, obj);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public synchronized <T> T queryById(Class<T> clazz, String sql,
             Object... obj) throws ClassNotFoundException, SQLException,
             InstantiationException, InvocationTargetException,
@@ -101,11 +172,12 @@ public class DBMan {
             }
             rs = stmt.executeQuery();
             ResultSetMetaData metaData = rs.getMetaData();
-            List<T> all = new ArrayList();
+            List<T> all = new ArrayList<T>();
             if (rs.next()) {
                 T t = clazz.newInstance();
                 for (int i = 1; i < metaData.getColumnCount() + 1; i++) {
-                    BeanUtils.copyProperty(t, metaData.getColumnName(i), rs.getObject(i));
+                    BeanUtils.copyProperty(t, metaData.getColumnName(i),
+                            rs.getObject(i));
                 }
                 return t;
             }
@@ -121,13 +193,31 @@ public class DBMan {
      * @param clazz 必须为JavaBean
      * @param sql
      * @param obj 可选参数，每个参数对应sql里的，每一个“？”
-     * @return 传入Class对应的List列表
+     * @return 传入Class对应的List列表（出现议程返回null）
      * @throws ClassNotFoundException
      * @throws SQLException
      * @throws InstantiationException
      * @throws InvocationTargetException
      * @throws IllegalAccessException
      */
+    public synchronized <T> List<T> queryWithoutThrow(Class<T> clazz, String sql,
+            Object... obj) {
+        try {
+            return query(clazz, sql, obj);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public synchronized <T> List<T> query(Class<T> clazz, String sql,
             Object... obj) throws ClassNotFoundException, SQLException,
             InstantiationException, InvocationTargetException,
@@ -144,7 +234,8 @@ public class DBMan {
             while (rs.next()) {
                 T t = clazz.newInstance();
                 for (int i = 1; i < metaData.getColumnCount() + 1; i++) {
-                    BeanUtils.copyProperty(t, metaData.getColumnName(i), rs.getObject(i));
+                    BeanUtils.copyProperty(t, metaData.getColumnName(i),
+                            rs.getObject(i));
                 }
                 all.add(t);
             }
@@ -159,10 +250,21 @@ public class DBMan {
      *
      * @param sql
      * @param obj
-     * @return返回DBMap，DBMap为HashMap，键为列名，值为列值
+     * @return返回DBMap，DBMap为HashMap，键为列名，值为列值（出现异常返回null）
      * @throws ClassNotFoundException
      * @throws SQLException
      */
+    public synchronized DBMap queryWithoutThrow(String sql, Object... obj) {
+        try {
+            return query(sql, obj);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public synchronized DBMap query(String sql, Object... obj)
             throws ClassNotFoundException, SQLException {
         try {
@@ -202,6 +304,17 @@ public class DBMan {
      * @throws ClassNotFoundException
      * @throws SQLException
      */
+    public synchronized int updateWithoutThrow(String sql, Object... obj) {
+        try {
+            return update(sql, obj);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
     public synchronized int update(String sql, Object... obj)
             throws ClassNotFoundException, SQLException {
         try {
@@ -225,7 +338,8 @@ public class DBMan {
         }
         conn = DriverManager.getConnection(url, user, passwd);
         if (conn == null) {
-            throw new ClassNotFoundException("数据库连接失败!请检查数据库连接信息!---错误代码: open()");
+            throw new ClassNotFoundException(
+                    "数据库连接失败!请检查数据库连接信息!---错误代码: open()");
         }
         conn.setAutoCommit(true);
     }

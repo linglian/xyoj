@@ -1,16 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.oj.linglian.entity;
 
-/**
- *
- * @author lol
- */
 public class Status {
-
     private String statusId;
     private String name;
     private String body;
@@ -41,7 +31,7 @@ public class Status {
 
     @Override
     public String toString() {
-        return "Status{" + "statusId=" + statusId + ", name=" + name + ", body=" + body + '}';
+        return "Status [statusId=" + statusId + ", name=" + name + ", body=" + body + ", ]";
     }
 
 }

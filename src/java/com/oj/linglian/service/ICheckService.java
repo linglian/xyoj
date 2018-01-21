@@ -1,0 +1,63 @@
+package com.oj.linglian.service;
+
+import java.util.List;
+
+import com.oj.linglian.entity.Check;
+
+public interface ICheckService {
+    public int update(Check check, Check keyCheck);
+    public int updateOfCheckId(Check check, String checkId);
+    public int updateOfInput(Check check, String input);
+    public int updateOfOutput(Check check, String output);
+    public int updateOfQuestionId(Check check, String questionId);
+    public int updateOfCheckIdAndInput(Check check, String checkId, String input);
+    public int updateOfCheckIdAndOutput(Check check, String checkId, String output);
+    public int updateOfCheckIdAndQuestionId(Check check, String checkId, String questionId);
+    public int updateOfInputAndOutput(Check check, String input, String output);
+    public int updateOfInputAndQuestionId(Check check, String input, String questionId);
+    public int updateOfOutputAndQuestionId(Check check, String output, String questionId);
+    public int remove(Check check);
+    public int removeOfCheckId(String checkId);
+    public int removeOfInput(String input);
+    public int removeOfOutput(String output);
+    public int removeOfQuestionId(String questionId);
+    public int removeOfCheckIdAndInput(String checkId, String input);
+    public int removeOfCheckIdAndOutput(String checkId, String output);
+    public int removeOfCheckIdAndQuestionId(String checkId, String questionId);
+    public int removeOfInputAndOutput(String input, String output);
+    public int removeOfInputAndQuestionId(String input, String questionId);
+    public int removeOfOutputAndQuestionId(String output, String questionId);
+    public int insert(Check check);
+    public int insertOfCheckId(String checkId);
+    public int insertOfInput(String input);
+    public int insertOfOutput(String output);
+    public int insertOfQuestionId(String questionId);
+    public int insertOfCheckIdAndInput(String checkId, String input);
+    public int insertOfCheckIdAndOutput(String checkId, String output);
+    public int insertOfCheckIdAndQuestionId(String checkId, String questionId);
+    public int insertOfInputAndOutput(String input, String output);
+    public int insertOfInputAndQuestionId(String input, String questionId);
+    public int insertOfOutputAndQuestionId(String output, String questionId);
+    public Check getCheck(Check check);
+    public Check getCheckOfCheckId(String checkId);
+    public Check getCheckOfInput(String input);
+    public Check getCheckOfOutput(String output);
+    public Check getCheckOfQuestionId(String questionId);
+    public Check getCheckOfCheckIdAndInput(String checkId, String input);
+    public Check getCheckOfCheckIdAndOutput(String checkId, String output);
+    public Check getCheckOfCheckIdAndQuestionId(String checkId, String questionId);
+    public Check getCheckOfInputAndOutput(String input, String output);
+    public Check getCheckOfInputAndQuestionId(String input, String questionId);
+    public Check getCheckOfOutputAndQuestionId(String output, String questionId);
+    public List<Check> getChecks(Check check);
+    public List<Check> getChecksOfCheckId(String checkId);
+    public List<Check> getChecksOfInput(String input);
+    public List<Check> getChecksOfOutput(String output);
+    public List<Check> getChecksOfQuestionId(String questionId);
+    public List<Check> getChecksOfCheckIdAndInput(String checkId, String input);
+    public List<Check> getChecksOfCheckIdAndOutput(String checkId, String output);
+    public List<Check> getChecksOfCheckIdAndQuestionId(String checkId, String questionId);
+    public List<Check> getChecksOfInputAndOutput(String input, String output);
+    public List<Check> getChecksOfInputAndQuestionId(String input, String questionId);
+    public List<Check> getChecksOfOutputAndQuestionId(String output, String questionId);
+}

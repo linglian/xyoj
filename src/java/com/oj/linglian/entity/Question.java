@@ -1,20 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.oj.linglian.entity;
 
-/**
- *
- * @author lol
- */
-public class Question implements java.io.Serializable {
-
-    private String questionId; // 主键
-    private String title; // 必选
-    private String body; // 必选
-    private String score; // 必选
+public class Question {
+    private String questionId;
+    private String title;
+    private String body;
+    private String score;
     private String demoCode;
     private String rightPeople;
     private String mainPeople;
@@ -131,7 +121,7 @@ public class Question implements java.io.Serializable {
 
     @Override
     public String toString() {
-        return "Question{" + "questionId=" + questionId + ", title=" + title + ", body=" + body + ", score=" + score + ", demoCode=" + demoCode + ", rightPeople=" + rightPeople + ", mainPeople=" + mainPeople + ", startTime=" + startTime + ", endTime=" + endTime + ", inputFormat=" + inputFormat + ", outputFormat=" + outputFormat + ", inputTest=" + inputTest + ", outputTest=" + outputTest + '}';
+        return "Question [questionId=" + questionId + ", title=" + title + ", body=" + body + ", score=" + score + ", demoCode=" + demoCode + ", rightPeople=" + rightPeople + ", mainPeople=" + mainPeople + ", startTime=" + startTime + ", endTime=" + endTime + ", inputFormat=" + inputFormat + ", outputFormat=" + outputFormat + ", inputTest=" + inputTest + ", outputTest=" + outputTest + ", ]";
     }
 
 }

@@ -6,12 +6,16 @@
 package com.oj.linglian.OJ;
 
 import com.oj.linglian.entity.Coder;
+import com.oj.linglian.entity.Check;
+import com.oj.linglian.entity.CoderBuilder;
 import com.oj.linglian.entity.Question;
 import com.oj.linglian.entity.User;
 import com.oj.linglian.service.ICoderService;
+import com.oj.linglian.service.ICheckService;
 import com.oj.linglian.service.IQuestionService;
 import com.oj.linglian.service.IUserService;
 import com.oj.linglian.serviceImpl.ICoderServiceImpl;
+import com.oj.linglian.serviceImpl.ICheckServiceImpl;
 import com.oj.linglian.serviceImpl.IQuestionServiceImpl;
 import com.oj.linglian.serviceImpl.IUserServiceImpl;
 import java.io.IOException;
@@ -83,16 +87,18 @@ public final class XYOJQueue extends Thread {
                     now.set(tempList.size());
                     break;
                 }
-                coder = XYOJ.getIns().getResult(new Coder.CoderBuilder(coder), null, new Date().getTime()).build();
+                ICheckService iiaus = new ICheckServiceImpl();
+                List<Check> qList = iiaus.getChecksOfQuestionId(coder.getQuestionId());
+                coder = XYOJ.getIns().getResult(new CoderBuilder(coder), qList, new Date().getTime()).build();
                 if ("1".equals(coder.getStatus())) {
                     IUserService ius = new IUserServiceImpl();
-                    User user = ius.queryUser(coder.getUserId());
+                    User user = ius.getUserOfUserId(coder.getUserId());
                     if (user.getPassQuestions() == null) {
                         user.setPassQuestions(coder.getQuestionId());
                         IQuestionService iqs = new IQuestionServiceImpl();
-                        Question q = iqs.queryQuestion(coder.getQuestionId());
+                        Question q = iqs.getQuestionOfQuestionId(coder.getQuestionId());
                         user.setScore(StringUtil.addInt(user.getScore(), q.getScore()));
-                        ius.updateUser(user);
+                        ius.updateOfUserId(user, user.getUserId());
                     } else {
                         String[] passQ = user.getPassQuestions().split(",");
                         boolean isHas = false;
@@ -105,17 +111,17 @@ public final class XYOJQueue extends Thread {
                         if (!isHas) {
                             user.setPassQuestions(user.getPassQuestions() + "," + coder.getQuestionId());
                             IQuestionService iqs = new IQuestionServiceImpl();
-                            Question q = iqs.queryQuestion(coder.getQuestionId());
+                            Question q = iqs.getQuestionOfQuestionId(coder.getQuestionId());
                             user.setScore(StringUtil.addInt(user.getScore(), q.getScore()));
-                            ius.updateUser(user);
+                            ius.updateOfUserId(user, user.getUserId());
                             q.setRightPeople(StringUtil.addInt(q.getRightPeople(), "1"));
-                            if (iqs.updateQuestion(q) == 0) {
+                            if (iqs.updateOfQuestionId(q, q.getQuestionId()) == 0) {
                                 System.out.println(q + "\n更新失败");
                             }
                         }
                     }
                 }
-                if (ics.updateCoder(coder) == 0) {
+                if (ics.updateOfCoderId(coder, coder.getCoderId()) == 0) {
                     System.out.println(coder + "\n更新失败");
                 }
                 now.addAndGet(1);

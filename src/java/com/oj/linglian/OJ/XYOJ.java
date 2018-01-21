@@ -1,8 +1,8 @@
 package com.oj.linglian.OJ;
 
 import com.oj.linglian.entity.Coder;
-import com.oj.linglian.entity.Coder.CoderBuilder;
-import com.oj.linglian.entity.InputAndOutput;
+import com.oj.linglian.entity.Check;
+import com.oj.linglian.entity.CoderBuilder;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -193,7 +193,7 @@ public class XYOJ {
         return null;
     }
 
-    public synchronized CoderBuilder getResult(CoderBuilder coder, List<InputAndOutput> iaoList, long startTime) {
+    public synchronized CoderBuilder getResult(CoderBuilder coder, List<Check> iaoList, long startTime) {
         try {
             String check = checkCode(coder.build());
             if (check != null) {
@@ -210,10 +210,10 @@ public class XYOJ {
             boolean isRight = true;
             StringBuffer resultList = new StringBuffer();
             if (iaoList != null) {
-                for (InputAndOutput iao : iaoList) {
+                for (Check iao : iaoList) {
                     String result = "";
                     result = runExe(coder.build(), iao.getInput(), startTime);
-                    resultList.append(result).append("------------------------\n");
+                    resultList.append(result).append("\n");
                     String str = iao.getOutput();
                     if (str != null) {
                         str = str.replaceAll("\r", "");
@@ -264,16 +264,16 @@ public class XYOJ {
             throws IOException, InterruptedException {
         Runnable b = new Runnable() {
             public void run() {
-                List<InputAndOutput> al = new ArrayList();
-                InputAndOutput ino;
+                List<Check> al = new ArrayList();
+                Check ino;
                 for (int i = 0; i < 10; i++) {
-                    ino = new InputAndOutput();
+                    ino = new Check();
                     ino.setInput(String.valueOf(i));
                     ino.setOutput(String.valueOf(i));
                     al.add(ino);
                 }
                 String str = "#include<iostream> \n#include<string>\n\nusing namespace std;\n\nint main() {\n    int a = 0;\n cin >> a;\n cout << a << endl;\n    return 0;\n}";
-                Coder coder = XYOJ.getIns().getResult(new Coder.CoderBuilder().setCode(str), al, new Date().getTime()).build();
+                Coder coder = XYOJ.getIns().getResult(new CoderBuilder().setCode(str), al, new Date().getTime()).build();
                 System.out.println(StringUtil.subLong(coder.getEndTime(), coder.getStartTime()) + "=" + coder.getStatus());
             }
         };

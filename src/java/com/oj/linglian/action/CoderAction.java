@@ -5,7 +5,7 @@
  */
 package com.oj.linglian.action;
 
-import com.linglian.util.ServletUtil;
+import util.ServletUtil;
 import com.oj.linglian.factory.IServletFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -23,7 +23,13 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "CoderAction", urlPatterns = {"/CoderAction"}, initParams = {
     @WebInitParam(name = "action_factory", value = "com.oj.linglian.factoryImpl.ICoderFactoryImpl"),
     @WebInitParam(name = "getList_from", value = "index.jsp"),
-    @WebInitParam(name = "getList_to", value = "coderList.jsp")})
+    @WebInitParam(name = "getList_to", value = "coderList.jsp"),
+    @WebInitParam(name = "push_from", value = "index.jsp"),
+    @WebInitParam(name = "push_to", value = "coderList.jsp"),
+    @WebInitParam(name = "get_from", value = "CoderAction?method=getAllList"),
+    @WebInitParam(name = "get_to", value = "coder.jsp"),
+    @WebInitParam(name = "login_from", value = "login.jsp"),
+    @WebInitParam(name = "login_to", value = "index.jsp")})
 public class CoderAction extends HttpServlet {
 
     /**

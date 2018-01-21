@@ -5,7 +5,7 @@ package com.oj.linglian.action;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import com.linglian.util.ServletUtil;
+import util.ServletUtil;
 import com.oj.linglian.factory.IServletFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -23,7 +23,9 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = {"/QuestionAction"}, initParams = {
     @WebInitParam(name = "action_factory", value = "com.oj.linglian.factoryImpl.IQuestionFactoryImpl"),
     @WebInitParam(name = "getList_from", value = "index.jsp"),
-    @WebInitParam(name = "getList_to", value = "showQuestion.jsp")})
+    @WebInitParam(name = "getList_to", value = "showQuestion.jsp"),
+    @WebInitParam(name = "get_from", value = "QuestionAction?method=getList"),
+    @WebInitParam(name = "get_to", value = "question.jsp")})
 public class QuestionAction extends HttpServlet {
 
     /**
