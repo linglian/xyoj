@@ -13,15 +13,11 @@
         <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                 <title>向阳小队专版OJ</title>
-                <link rel="stylesheet" href="layui/css/layui.css"  media="all">
-                <link rel = "stylesheet" type = "text/css" href = "css/index.css"/>
-                <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script> <!-- 你必须先引入jQuery1.8或以上版本 -->
-                <script src="layer/layer.js"></script>
-                <script src="layui/layui.js"></script>
-                <c:if test="${not empty info}">
-                    <script>layer.msg('${info}')</script>
-                    <c:remove var="info" />
-                </c:if>
+                <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/comm/layui/css/layui.css" />
+                <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/comm/layui/css/modules/layer/default/layer.css" />
+                <script src="${pageContext.request.contextPath}/comm/layui/layui.js" charset="utf-8"></script>
+                <script src="${pageContext.request.contextPath}/comm/jquery/jquery-2.1.4.js"></script>
+                <script src="${pageContext.request.contextPath}/comm/layer/layer.js"></script>
                 <c:if test="${empty sessionScope.identity}">
                     <c:set var="info" value="尚未登录，请登录!" scope="session" />
                     <c:redirect url="login.jsp" />
@@ -32,36 +28,30 @@
                 </c:if>
         </head>
         <body>
-                <ul class="layui-nav">
-                        <li class="layui-nav-item">
-                                <a href="index.jsp">首页</a>
-                        </li>
-                        <li class="layui-nav-item">
-                                <a href="">个人中心<span class="layui-badge-dot"></span></a>
-                        </li>
-                        <li class="layui-nav-item">
-                                <a href=""><img src="http://t.cn/RCzsdCq" class="layui-nav-img">我</a>
-                                <dl class="layui-nav-child">
-                                        <dd><a href="javascript:;">修改信息</a></dd>
-                                        <dd><a href="javascript:;">安全管理</a></dd>
-                                        <dd><a href="javascript:;">退出</a></dd>
-                                </dl>
-                        </li>
-                </ul>
+                <c:import url="top.jsp" />
                 <fieldset class="layui-elem-field layui-field-title">
                         <legend>
-                                <font style="font-size: 48px;">No.${sessionScope.coder.coderId} </font>
                                 <a href="QuestionAction?method=get&questionId=${sessionScope.coder.questionId}" style="font-size: 24px; color: #01AAED;">No.${sessionScope.coder.questionId} ${sessionScope.showQuestion.title}</a>
                                 <font style="color:#FF5722; font-size: 12px;">By. ${sessionScope.coder.userId}</font>
                         </legend>
                         <div class="layui-tab layui-tab-card">
                                 <ul class="layui-tab-title">
-                                        <li class="layui-this">题目详情</li>
-                                        <li>代码详情</li>
+                                        <li class="layui-this">代码详情</li>
+                                        <li>题目详情</li>
                                         <li>交流专区</li>
                                 </ul>
                                 <div class="layui-tab-content">
                                         <div class="layui-tab-item layui-show">
+                                                <legend><b>代码</b></legend>
+                                                <div class="layui-field-box">
+                                                        <pre>${sessionScope.coder.code}</pre>
+                                                </div>
+                                                <legend><b>代码输出结果</b></legend>
+                                                <div class="layui-field-box">
+                                                        <pre>${coder.result}</pre>
+                                                </div>
+                                        </div>
+                                        <div class="layui-tab-item">
                                                 <fieldset class="layui-elem-field">
                                                         <legend><b>题目要求</b></legend>
                                                         <div class="layui-field-box">
@@ -83,18 +73,15 @@
                                                 <fieldset class="layui-elem-field">
                                                         <legend><b>输入样例</b></legend>
                                                         <div class="layui-field-box">
-                                                                <pre class="layui-code" lay-title="C++" lay-skin="notepad">${sessionScope.showQuestion.inputTest}</pre>
+                                                                <pre>${sessionScope.showQuestion.inputTest}</pre>
                                                         </div>
                                                 </fieldset>
                                                 <fieldset class="layui-elem-field">
                                                         <legend><b>输出样例</b></legend>
                                                         <div class="layui-field-box">
-                                                                <pre class="layui-code" lay-title="C++" lay-skin="notepad">${sessionScope.showQuestion.outputTest}</pre>
+                                                                <pre>${sessionScope.showQuestion.outputTest}</pre>
                                                         </div>
                                                 </fieldset>
-                                        </div>
-                                        <div class="layui-tab-item">
-                                                <pre class="layui-code" lay-title="C++" lay-skin="notepad">${sessionScope.coder.code}</pre>
                                         </div>
                                         <div class="layui-tab-item">
                                                 正在研发

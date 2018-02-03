@@ -13,32 +13,11 @@
         <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                 <title>向阳小队专版OJ</title>
-                <link rel="stylesheet" href="layui/css/layui.css"  media="all">
-                <link rel = "stylesheet" type = "text/css" href = "css/index.css"/>
-                <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script> <!-- 你必须先引入jQuery1.8或以上版本 -->
-                <script src="layer/layer.js"></script>
-                <script src="layui/layui.js"></script>
-                <script>
-                    $(document).ready(function () {
-                        function updateTime()
-                        {
-                            for (var i = 0; i < ${questionLimit}; i++) {
-                                var time = parseInt($("#time_" + i).html());
-                                if (time) {
-                                    $("#time_" + i).html(time - 1);
-                                    time = $("#time_" + i).html();
-                                    time = parseInt(time);
-                                    var hour = parseInt(time / 3600);
-                                    var minute = parseInt((time - hour * 3600) / 60);
-                                    var second = parseInt(time % 60);
-                                    $("#date_" + i).html(hour + "小时" + minute + "分" + second + "秒");
-                                }
-                            }
-                        }
-                        updateTime();
-                        window.setInterval(updateTime, 1000);
-                    });
-                </script>
+                <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/comm/layui/css/layui.css" />
+                <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/comm/layui/css/modules/layer/default/layer.css" />
+                <script src="${pageContext.request.contextPath}/comm/layui/layui.js" charset="utf-8"></script>
+                <script src="${pageContext.request.contextPath}/comm/jquery/jquery-2.1.4.js"></script>
+                <script src="${pageContext.request.contextPath}/comm/layer/layer.js"></script>
                 <c:if test="${not empty info}">
                     <script>layer.msg('${info}')</script>
                     <c:remove var="info" />
@@ -49,27 +28,13 @@
                 </c:if>
         </head>
         <body>
-                <ul class="layui-nav">
-                        <li class="layui-nav-item">
-                                <a href="index.jsp">首页</a>
-                        </li>
-                        <li class="layui-nav-item">
-                                <a href="">个人中心<span class="layui-badge-dot"></span></a>
-                        </li>
-                        <li class="layui-nav-item">
-                                <a href=""><img src="http://t.cn/RCzsdCq" class="layui-nav-img">我</a>
-                                <dl class="layui-nav-child">
-                                        <dd><a href="javascript:;">修改信息</a></dd>
-                                        <dd><a href="javascript:;">安全管理</a></dd>
-                                        <dd><a href="javascript:;">退出</a></dd>
-                                </dl>
-                        </li>
-                </ul>
+                <c:import url="top.jsp" />
                 <table class="layui-table" lay-even lay-skin="nob">
                         <colgroup>
                                 <col width="100">
                                 <col width="50">
                                 <col width="200">
+                                <col width="100">
                                 <col width="100">
                                 <col width="50">
                         </colgroup>
@@ -79,6 +44,7 @@
                                         <th>分值</th>
                                         <th>剩余时间</th>
                                         <th>通过率</th>
+                                        <th>相关竞赛</th>
                                         <th>操作</th>
                                 </tr> 
                         </thead>
@@ -97,11 +63,11 @@
                                                     <c:choose>  
                                                         <c:when test="${q.endTime - date > 0 && q.endTime - date < 1000 * 60 * 60 * 24 *365}">
                                                             <span id="date_${status.index}"></span><span  id="time_${status.index}" hidden="true">${(q.endTime - date) / 1000}</span>
-                                                        </c:when>  
-                                                        <c:otherwise>
-                                                            <c:choose>  
-                                                                <c:when test="${q.endTime - date >= 1000 * 60 * 60 * 24 *365}">
-                                                                    （彭倩最好了）
+                                                            </c:when>  
+                                                            <c:otherwise>
+                                                                <c:choose>  
+                                                                    <c:when test="${q.endTime - date >= 1000 * 60 * 60 * 24 *365}">
+                                                                    （永久开启）
                                                                 </c:when>  
                                                                 <c:otherwise>
                                                                     （已经结束）
@@ -116,11 +82,23 @@
                                                             无人挑战
                                                         </c:when>  
                                                         <c:otherwise>
-                                                            ${q.rightPeople / q.mainPeople}(${q.rightPeople} / ${q.mainPeople})
+                                                            ${q.rightPeople} / ${q.mainPeople}
                                                         </c:otherwise>  
                                                     </c:choose>  
                                             </td>
-                                            <td><a href="QuestionAction?method=get&questionId=${q.questionId}"><button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe600;</i> 挑战</button></a></td>
+                                            <td>
+                                                    <c:if test="${not empty q.contestId}">
+                                                        <a href="${pageContext.request.contextPath}/ContestAction?method=get&contestId=${q.contestId}" style="color: #01AAED;">
+                                                                ${contestMap[q.contestId].title}
+                                                        </a>
+                                                    </c:if>
+                                            </td>
+                                            <td>
+                                                    <a href="${pageContext.request.contextPath}/QuestionAction?method=get&questionId=${q.questionId}">
+                                                            <button class="layui-btn layui-btn-primary">
+                                                                    <i class="layui-icon">&#xe600;</i> 详情</button>
+                                                    </a>
+                                            </td>
                                     </tr>
                                 </c:forEach>
                         </tbody>
@@ -139,7 +117,7 @@
                             , curr: ${questionPage}
                             , jump: function (obj) {
                                 if (obj.curr != ${questionPage} || obj.limit != ${questionLimit}) {
-                                    location.href = "QuestionAction?method=getList&questionPage=" + obj.curr + "&questionLimit=" + obj.limit;
+                                    location.href = "${pageContext.request.contextPath}/QuestionAction?method=getList&questionPage=" + obj.curr + "&questionLimit=" + obj.limit;
                                 }
                             }
                         });

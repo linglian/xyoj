@@ -32,7 +32,7 @@ public class DBMan {
     private PreparedStatement stmt;
     private ResultSet rs;
 
-    private static DBMan instance;
+    volatile private static DBMan instance;
 
     private boolean isLoadClass;
 
@@ -76,9 +76,13 @@ public class DBMan {
      * @return DBMan对象实例
      * @throws IOException
      */
-    public static DBMan getInstance() {
+    public static synchronized DBMan getInstance() {
         if (instance == null) {
-            instance = new DBMan();
+            synchronized (DBMan.class) {
+                if (instance == null) {
+                    instance = new DBMan();
+                }
+            }
         }
         return instance;
     }
@@ -111,7 +115,9 @@ public class DBMan {
         String sql = new SqlUtil().setStatus(SqlUtil.SQL_SELECT)
                 .addBeforeWheres(ClassUtil.getName(t.getClass()))
                 .addDataName(dataName)
-                .addAfterWheres(ClassUtil.getNameNotNull(t)).build();
+                .addAfterWheres(ClassUtil.getNameNotNull(t))
+                .addLast("order by " + dataName + "Id DESC")
+                .build();
         return (List<T>) queryWithoutThrow(t.getClass(), sql,
                 ClassUtil.getValueNotNull(t));
     }

@@ -76,6 +76,16 @@ public class IQuestionDaoImpl implements IQuestionDao {
         kQuestion.setOutputTest(outputTest);
         return update(question, kQuestion);
     }
+    public int updateOfContestId(Question question, String contestId) {
+        Question kQuestion = new Question();
+        kQuestion.setContestId(contestId);
+        return update(question, kQuestion);
+    }
+    public int updateOfUserId(Question question, String userId) {
+        Question kQuestion = new Question();
+        kQuestion.setUserId(userId);
+        return update(question, kQuestion);
+    }
     public int updateOfQuestionIdAndTitle(Question question, String questionId, String title) {
         Question kQuestion = new Question();
         kQuestion.setQuestionId(questionId);
@@ -148,6 +158,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         kQuestion.setOutputTest(outputTest);
         return update(question, kQuestion);
     }
+    public int updateOfQuestionIdAndContestId(Question question, String questionId, String contestId) {
+        Question kQuestion = new Question();
+        kQuestion.setQuestionId(questionId);
+        kQuestion.setContestId(contestId);
+        return update(question, kQuestion);
+    }
+    public int updateOfQuestionIdAndUserId(Question question, String questionId, String userId) {
+        Question kQuestion = new Question();
+        kQuestion.setQuestionId(questionId);
+        kQuestion.setUserId(userId);
+        return update(question, kQuestion);
+    }
     public int updateOfTitleAndBody(Question question, String title, String body) {
         Question kQuestion = new Question();
         kQuestion.setTitle(title);
@@ -214,6 +236,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         kQuestion.setOutputTest(outputTest);
         return update(question, kQuestion);
     }
+    public int updateOfTitleAndContestId(Question question, String title, String contestId) {
+        Question kQuestion = new Question();
+        kQuestion.setTitle(title);
+        kQuestion.setContestId(contestId);
+        return update(question, kQuestion);
+    }
+    public int updateOfTitleAndUserId(Question question, String title, String userId) {
+        Question kQuestion = new Question();
+        kQuestion.setTitle(title);
+        kQuestion.setUserId(userId);
+        return update(question, kQuestion);
+    }
     public int updateOfBodyAndScore(Question question, String body, String score) {
         Question kQuestion = new Question();
         kQuestion.setBody(body);
@@ -274,6 +308,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         kQuestion.setOutputTest(outputTest);
         return update(question, kQuestion);
     }
+    public int updateOfBodyAndContestId(Question question, String body, String contestId) {
+        Question kQuestion = new Question();
+        kQuestion.setBody(body);
+        kQuestion.setContestId(contestId);
+        return update(question, kQuestion);
+    }
+    public int updateOfBodyAndUserId(Question question, String body, String userId) {
+        Question kQuestion = new Question();
+        kQuestion.setBody(body);
+        kQuestion.setUserId(userId);
+        return update(question, kQuestion);
+    }
     public int updateOfScoreAndDemoCode(Question question, String score, String demoCode) {
         Question kQuestion = new Question();
         kQuestion.setScore(score);
@@ -328,6 +374,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         kQuestion.setOutputTest(outputTest);
         return update(question, kQuestion);
     }
+    public int updateOfScoreAndContestId(Question question, String score, String contestId) {
+        Question kQuestion = new Question();
+        kQuestion.setScore(score);
+        kQuestion.setContestId(contestId);
+        return update(question, kQuestion);
+    }
+    public int updateOfScoreAndUserId(Question question, String score, String userId) {
+        Question kQuestion = new Question();
+        kQuestion.setScore(score);
+        kQuestion.setUserId(userId);
+        return update(question, kQuestion);
+    }
     public int updateOfDemoCodeAndRightPeople(Question question, String demoCode, String rightPeople) {
         Question kQuestion = new Question();
         kQuestion.setDemoCode(demoCode);
@@ -376,6 +434,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         kQuestion.setOutputTest(outputTest);
         return update(question, kQuestion);
     }
+    public int updateOfDemoCodeAndContestId(Question question, String demoCode, String contestId) {
+        Question kQuestion = new Question();
+        kQuestion.setDemoCode(demoCode);
+        kQuestion.setContestId(contestId);
+        return update(question, kQuestion);
+    }
+    public int updateOfDemoCodeAndUserId(Question question, String demoCode, String userId) {
+        Question kQuestion = new Question();
+        kQuestion.setDemoCode(demoCode);
+        kQuestion.setUserId(userId);
+        return update(question, kQuestion);
+    }
     public int updateOfRightPeopleAndMainPeople(Question question, String rightPeople, String mainPeople) {
         Question kQuestion = new Question();
         kQuestion.setRightPeople(rightPeople);
@@ -418,6 +488,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         kQuestion.setOutputTest(outputTest);
         return update(question, kQuestion);
     }
+    public int updateOfRightPeopleAndContestId(Question question, String rightPeople, String contestId) {
+        Question kQuestion = new Question();
+        kQuestion.setRightPeople(rightPeople);
+        kQuestion.setContestId(contestId);
+        return update(question, kQuestion);
+    }
+    public int updateOfRightPeopleAndUserId(Question question, String rightPeople, String userId) {
+        Question kQuestion = new Question();
+        kQuestion.setRightPeople(rightPeople);
+        kQuestion.setUserId(userId);
+        return update(question, kQuestion);
+    }
     public int updateOfMainPeopleAndStartTime(Question question, String mainPeople, String startTime) {
         Question kQuestion = new Question();
         kQuestion.setMainPeople(mainPeople);
@@ -454,6 +536,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         kQuestion.setOutputTest(outputTest);
         return update(question, kQuestion);
     }
+    public int updateOfMainPeopleAndContestId(Question question, String mainPeople, String contestId) {
+        Question kQuestion = new Question();
+        kQuestion.setMainPeople(mainPeople);
+        kQuestion.setContestId(contestId);
+        return update(question, kQuestion);
+    }
+    public int updateOfMainPeopleAndUserId(Question question, String mainPeople, String userId) {
+        Question kQuestion = new Question();
+        kQuestion.setMainPeople(mainPeople);
+        kQuestion.setUserId(userId);
+        return update(question, kQuestion);
+    }
     public int updateOfStartTimeAndEndTime(Question question, String startTime, String endTime) {
         Question kQuestion = new Question();
         kQuestion.setStartTime(startTime);
@@ -484,6 +578,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         kQuestion.setOutputTest(outputTest);
         return update(question, kQuestion);
     }
+    public int updateOfStartTimeAndContestId(Question question, String startTime, String contestId) {
+        Question kQuestion = new Question();
+        kQuestion.setStartTime(startTime);
+        kQuestion.setContestId(contestId);
+        return update(question, kQuestion);
+    }
+    public int updateOfStartTimeAndUserId(Question question, String startTime, String userId) {
+        Question kQuestion = new Question();
+        kQuestion.setStartTime(startTime);
+        kQuestion.setUserId(userId);
+        return update(question, kQuestion);
+    }
     public int updateOfEndTimeAndInputFormat(Question question, String endTime, String inputFormat) {
         Question kQuestion = new Question();
         kQuestion.setEndTime(endTime);
@@ -508,6 +614,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         kQuestion.setOutputTest(outputTest);
         return update(question, kQuestion);
     }
+    public int updateOfEndTimeAndContestId(Question question, String endTime, String contestId) {
+        Question kQuestion = new Question();
+        kQuestion.setEndTime(endTime);
+        kQuestion.setContestId(contestId);
+        return update(question, kQuestion);
+    }
+    public int updateOfEndTimeAndUserId(Question question, String endTime, String userId) {
+        Question kQuestion = new Question();
+        kQuestion.setEndTime(endTime);
+        kQuestion.setUserId(userId);
+        return update(question, kQuestion);
+    }
     public int updateOfInputFormatAndOutputFormat(Question question, String inputFormat, String outputFormat) {
         Question kQuestion = new Question();
         kQuestion.setInputFormat(inputFormat);
@@ -526,6 +644,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         kQuestion.setOutputTest(outputTest);
         return update(question, kQuestion);
     }
+    public int updateOfInputFormatAndContestId(Question question, String inputFormat, String contestId) {
+        Question kQuestion = new Question();
+        kQuestion.setInputFormat(inputFormat);
+        kQuestion.setContestId(contestId);
+        return update(question, kQuestion);
+    }
+    public int updateOfInputFormatAndUserId(Question question, String inputFormat, String userId) {
+        Question kQuestion = new Question();
+        kQuestion.setInputFormat(inputFormat);
+        kQuestion.setUserId(userId);
+        return update(question, kQuestion);
+    }
     public int updateOfOutputFormatAndInputTest(Question question, String outputFormat, String inputTest) {
         Question kQuestion = new Question();
         kQuestion.setOutputFormat(outputFormat);
@@ -538,10 +668,52 @@ public class IQuestionDaoImpl implements IQuestionDao {
         kQuestion.setOutputTest(outputTest);
         return update(question, kQuestion);
     }
+    public int updateOfOutputFormatAndContestId(Question question, String outputFormat, String contestId) {
+        Question kQuestion = new Question();
+        kQuestion.setOutputFormat(outputFormat);
+        kQuestion.setContestId(contestId);
+        return update(question, kQuestion);
+    }
+    public int updateOfOutputFormatAndUserId(Question question, String outputFormat, String userId) {
+        Question kQuestion = new Question();
+        kQuestion.setOutputFormat(outputFormat);
+        kQuestion.setUserId(userId);
+        return update(question, kQuestion);
+    }
     public int updateOfInputTestAndOutputTest(Question question, String inputTest, String outputTest) {
         Question kQuestion = new Question();
         kQuestion.setInputTest(inputTest);
         kQuestion.setOutputTest(outputTest);
+        return update(question, kQuestion);
+    }
+    public int updateOfInputTestAndContestId(Question question, String inputTest, String contestId) {
+        Question kQuestion = new Question();
+        kQuestion.setInputTest(inputTest);
+        kQuestion.setContestId(contestId);
+        return update(question, kQuestion);
+    }
+    public int updateOfInputTestAndUserId(Question question, String inputTest, String userId) {
+        Question kQuestion = new Question();
+        kQuestion.setInputTest(inputTest);
+        kQuestion.setUserId(userId);
+        return update(question, kQuestion);
+    }
+    public int updateOfOutputTestAndContestId(Question question, String outputTest, String contestId) {
+        Question kQuestion = new Question();
+        kQuestion.setOutputTest(outputTest);
+        kQuestion.setContestId(contestId);
+        return update(question, kQuestion);
+    }
+    public int updateOfOutputTestAndUserId(Question question, String outputTest, String userId) {
+        Question kQuestion = new Question();
+        kQuestion.setOutputTest(outputTest);
+        kQuestion.setUserId(userId);
+        return update(question, kQuestion);
+    }
+    public int updateOfContestIdAndUserId(Question question, String contestId, String userId) {
+        Question kQuestion = new Question();
+        kQuestion.setContestId(contestId);
+        kQuestion.setUserId(userId);
         return update(question, kQuestion);
     }
     public int remove(Question question) {
@@ -610,6 +782,16 @@ public class IQuestionDaoImpl implements IQuestionDao {
     public int removeOfOutputTest(String outputTest) {
         Question question = new Question();
         question.setOutputTest(outputTest);
+        return remove(question);
+    }
+    public int removeOfContestId(String contestId) {
+        Question question = new Question();
+        question.setContestId(contestId);
+        return remove(question);
+    }
+    public int removeOfUserId(String userId) {
+        Question question = new Question();
+        question.setUserId(userId);
         return remove(question);
     }
     public int removeOfQuestionIdAndTitle(String questionId, String title) {
@@ -684,6 +866,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return remove(question);
     }
+    public int removeOfQuestionIdAndContestId(String questionId, String contestId) {
+        Question question = new Question();
+        question.setQuestionId(questionId);
+        question.setContestId(contestId);
+        return remove(question);
+    }
+    public int removeOfQuestionIdAndUserId(String questionId, String userId) {
+        Question question = new Question();
+        question.setQuestionId(questionId);
+        question.setUserId(userId);
+        return remove(question);
+    }
     public int removeOfTitleAndBody(String title, String body) {
         Question question = new Question();
         question.setTitle(title);
@@ -750,6 +944,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return remove(question);
     }
+    public int removeOfTitleAndContestId(String title, String contestId) {
+        Question question = new Question();
+        question.setTitle(title);
+        question.setContestId(contestId);
+        return remove(question);
+    }
+    public int removeOfTitleAndUserId(String title, String userId) {
+        Question question = new Question();
+        question.setTitle(title);
+        question.setUserId(userId);
+        return remove(question);
+    }
     public int removeOfBodyAndScore(String body, String score) {
         Question question = new Question();
         question.setBody(body);
@@ -810,6 +1016,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return remove(question);
     }
+    public int removeOfBodyAndContestId(String body, String contestId) {
+        Question question = new Question();
+        question.setBody(body);
+        question.setContestId(contestId);
+        return remove(question);
+    }
+    public int removeOfBodyAndUserId(String body, String userId) {
+        Question question = new Question();
+        question.setBody(body);
+        question.setUserId(userId);
+        return remove(question);
+    }
     public int removeOfScoreAndDemoCode(String score, String demoCode) {
         Question question = new Question();
         question.setScore(score);
@@ -864,6 +1082,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return remove(question);
     }
+    public int removeOfScoreAndContestId(String score, String contestId) {
+        Question question = new Question();
+        question.setScore(score);
+        question.setContestId(contestId);
+        return remove(question);
+    }
+    public int removeOfScoreAndUserId(String score, String userId) {
+        Question question = new Question();
+        question.setScore(score);
+        question.setUserId(userId);
+        return remove(question);
+    }
     public int removeOfDemoCodeAndRightPeople(String demoCode, String rightPeople) {
         Question question = new Question();
         question.setDemoCode(demoCode);
@@ -912,6 +1142,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return remove(question);
     }
+    public int removeOfDemoCodeAndContestId(String demoCode, String contestId) {
+        Question question = new Question();
+        question.setDemoCode(demoCode);
+        question.setContestId(contestId);
+        return remove(question);
+    }
+    public int removeOfDemoCodeAndUserId(String demoCode, String userId) {
+        Question question = new Question();
+        question.setDemoCode(demoCode);
+        question.setUserId(userId);
+        return remove(question);
+    }
     public int removeOfRightPeopleAndMainPeople(String rightPeople, String mainPeople) {
         Question question = new Question();
         question.setRightPeople(rightPeople);
@@ -954,6 +1196,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return remove(question);
     }
+    public int removeOfRightPeopleAndContestId(String rightPeople, String contestId) {
+        Question question = new Question();
+        question.setRightPeople(rightPeople);
+        question.setContestId(contestId);
+        return remove(question);
+    }
+    public int removeOfRightPeopleAndUserId(String rightPeople, String userId) {
+        Question question = new Question();
+        question.setRightPeople(rightPeople);
+        question.setUserId(userId);
+        return remove(question);
+    }
     public int removeOfMainPeopleAndStartTime(String mainPeople, String startTime) {
         Question question = new Question();
         question.setMainPeople(mainPeople);
@@ -990,6 +1244,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return remove(question);
     }
+    public int removeOfMainPeopleAndContestId(String mainPeople, String contestId) {
+        Question question = new Question();
+        question.setMainPeople(mainPeople);
+        question.setContestId(contestId);
+        return remove(question);
+    }
+    public int removeOfMainPeopleAndUserId(String mainPeople, String userId) {
+        Question question = new Question();
+        question.setMainPeople(mainPeople);
+        question.setUserId(userId);
+        return remove(question);
+    }
     public int removeOfStartTimeAndEndTime(String startTime, String endTime) {
         Question question = new Question();
         question.setStartTime(startTime);
@@ -1020,6 +1286,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return remove(question);
     }
+    public int removeOfStartTimeAndContestId(String startTime, String contestId) {
+        Question question = new Question();
+        question.setStartTime(startTime);
+        question.setContestId(contestId);
+        return remove(question);
+    }
+    public int removeOfStartTimeAndUserId(String startTime, String userId) {
+        Question question = new Question();
+        question.setStartTime(startTime);
+        question.setUserId(userId);
+        return remove(question);
+    }
     public int removeOfEndTimeAndInputFormat(String endTime, String inputFormat) {
         Question question = new Question();
         question.setEndTime(endTime);
@@ -1044,6 +1322,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return remove(question);
     }
+    public int removeOfEndTimeAndContestId(String endTime, String contestId) {
+        Question question = new Question();
+        question.setEndTime(endTime);
+        question.setContestId(contestId);
+        return remove(question);
+    }
+    public int removeOfEndTimeAndUserId(String endTime, String userId) {
+        Question question = new Question();
+        question.setEndTime(endTime);
+        question.setUserId(userId);
+        return remove(question);
+    }
     public int removeOfInputFormatAndOutputFormat(String inputFormat, String outputFormat) {
         Question question = new Question();
         question.setInputFormat(inputFormat);
@@ -1062,6 +1352,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return remove(question);
     }
+    public int removeOfInputFormatAndContestId(String inputFormat, String contestId) {
+        Question question = new Question();
+        question.setInputFormat(inputFormat);
+        question.setContestId(contestId);
+        return remove(question);
+    }
+    public int removeOfInputFormatAndUserId(String inputFormat, String userId) {
+        Question question = new Question();
+        question.setInputFormat(inputFormat);
+        question.setUserId(userId);
+        return remove(question);
+    }
     public int removeOfOutputFormatAndInputTest(String outputFormat, String inputTest) {
         Question question = new Question();
         question.setOutputFormat(outputFormat);
@@ -1074,10 +1376,52 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return remove(question);
     }
+    public int removeOfOutputFormatAndContestId(String outputFormat, String contestId) {
+        Question question = new Question();
+        question.setOutputFormat(outputFormat);
+        question.setContestId(contestId);
+        return remove(question);
+    }
+    public int removeOfOutputFormatAndUserId(String outputFormat, String userId) {
+        Question question = new Question();
+        question.setOutputFormat(outputFormat);
+        question.setUserId(userId);
+        return remove(question);
+    }
     public int removeOfInputTestAndOutputTest(String inputTest, String outputTest) {
         Question question = new Question();
         question.setInputTest(inputTest);
         question.setOutputTest(outputTest);
+        return remove(question);
+    }
+    public int removeOfInputTestAndContestId(String inputTest, String contestId) {
+        Question question = new Question();
+        question.setInputTest(inputTest);
+        question.setContestId(contestId);
+        return remove(question);
+    }
+    public int removeOfInputTestAndUserId(String inputTest, String userId) {
+        Question question = new Question();
+        question.setInputTest(inputTest);
+        question.setUserId(userId);
+        return remove(question);
+    }
+    public int removeOfOutputTestAndContestId(String outputTest, String contestId) {
+        Question question = new Question();
+        question.setOutputTest(outputTest);
+        question.setContestId(contestId);
+        return remove(question);
+    }
+    public int removeOfOutputTestAndUserId(String outputTest, String userId) {
+        Question question = new Question();
+        question.setOutputTest(outputTest);
+        question.setUserId(userId);
+        return remove(question);
+    }
+    public int removeOfContestIdAndUserId(String contestId, String userId) {
+        Question question = new Question();
+        question.setContestId(contestId);
+        question.setUserId(userId);
         return remove(question);
     }
     public int insert(Question question) {
@@ -1146,6 +1490,16 @@ public class IQuestionDaoImpl implements IQuestionDao {
     public int insertOfOutputTest(String outputTest) {
         Question question = new Question();
         question.setOutputTest(outputTest);
+        return insert(question);
+    }
+    public int insertOfContestId(String contestId) {
+        Question question = new Question();
+        question.setContestId(contestId);
+        return insert(question);
+    }
+    public int insertOfUserId(String userId) {
+        Question question = new Question();
+        question.setUserId(userId);
         return insert(question);
     }
     public int insertOfQuestionIdAndTitle(String questionId, String title) {
@@ -1220,6 +1574,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return insert(question);
     }
+    public int insertOfQuestionIdAndContestId(String questionId, String contestId) {
+        Question question = new Question();
+        question.setQuestionId(questionId);
+        question.setContestId(contestId);
+        return insert(question);
+    }
+    public int insertOfQuestionIdAndUserId(String questionId, String userId) {
+        Question question = new Question();
+        question.setQuestionId(questionId);
+        question.setUserId(userId);
+        return insert(question);
+    }
     public int insertOfTitleAndBody(String title, String body) {
         Question question = new Question();
         question.setTitle(title);
@@ -1286,6 +1652,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return insert(question);
     }
+    public int insertOfTitleAndContestId(String title, String contestId) {
+        Question question = new Question();
+        question.setTitle(title);
+        question.setContestId(contestId);
+        return insert(question);
+    }
+    public int insertOfTitleAndUserId(String title, String userId) {
+        Question question = new Question();
+        question.setTitle(title);
+        question.setUserId(userId);
+        return insert(question);
+    }
     public int insertOfBodyAndScore(String body, String score) {
         Question question = new Question();
         question.setBody(body);
@@ -1346,6 +1724,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return insert(question);
     }
+    public int insertOfBodyAndContestId(String body, String contestId) {
+        Question question = new Question();
+        question.setBody(body);
+        question.setContestId(contestId);
+        return insert(question);
+    }
+    public int insertOfBodyAndUserId(String body, String userId) {
+        Question question = new Question();
+        question.setBody(body);
+        question.setUserId(userId);
+        return insert(question);
+    }
     public int insertOfScoreAndDemoCode(String score, String demoCode) {
         Question question = new Question();
         question.setScore(score);
@@ -1400,6 +1790,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return insert(question);
     }
+    public int insertOfScoreAndContestId(String score, String contestId) {
+        Question question = new Question();
+        question.setScore(score);
+        question.setContestId(contestId);
+        return insert(question);
+    }
+    public int insertOfScoreAndUserId(String score, String userId) {
+        Question question = new Question();
+        question.setScore(score);
+        question.setUserId(userId);
+        return insert(question);
+    }
     public int insertOfDemoCodeAndRightPeople(String demoCode, String rightPeople) {
         Question question = new Question();
         question.setDemoCode(demoCode);
@@ -1448,6 +1850,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return insert(question);
     }
+    public int insertOfDemoCodeAndContestId(String demoCode, String contestId) {
+        Question question = new Question();
+        question.setDemoCode(demoCode);
+        question.setContestId(contestId);
+        return insert(question);
+    }
+    public int insertOfDemoCodeAndUserId(String demoCode, String userId) {
+        Question question = new Question();
+        question.setDemoCode(demoCode);
+        question.setUserId(userId);
+        return insert(question);
+    }
     public int insertOfRightPeopleAndMainPeople(String rightPeople, String mainPeople) {
         Question question = new Question();
         question.setRightPeople(rightPeople);
@@ -1490,6 +1904,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return insert(question);
     }
+    public int insertOfRightPeopleAndContestId(String rightPeople, String contestId) {
+        Question question = new Question();
+        question.setRightPeople(rightPeople);
+        question.setContestId(contestId);
+        return insert(question);
+    }
+    public int insertOfRightPeopleAndUserId(String rightPeople, String userId) {
+        Question question = new Question();
+        question.setRightPeople(rightPeople);
+        question.setUserId(userId);
+        return insert(question);
+    }
     public int insertOfMainPeopleAndStartTime(String mainPeople, String startTime) {
         Question question = new Question();
         question.setMainPeople(mainPeople);
@@ -1526,6 +1952,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return insert(question);
     }
+    public int insertOfMainPeopleAndContestId(String mainPeople, String contestId) {
+        Question question = new Question();
+        question.setMainPeople(mainPeople);
+        question.setContestId(contestId);
+        return insert(question);
+    }
+    public int insertOfMainPeopleAndUserId(String mainPeople, String userId) {
+        Question question = new Question();
+        question.setMainPeople(mainPeople);
+        question.setUserId(userId);
+        return insert(question);
+    }
     public int insertOfStartTimeAndEndTime(String startTime, String endTime) {
         Question question = new Question();
         question.setStartTime(startTime);
@@ -1556,6 +1994,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return insert(question);
     }
+    public int insertOfStartTimeAndContestId(String startTime, String contestId) {
+        Question question = new Question();
+        question.setStartTime(startTime);
+        question.setContestId(contestId);
+        return insert(question);
+    }
+    public int insertOfStartTimeAndUserId(String startTime, String userId) {
+        Question question = new Question();
+        question.setStartTime(startTime);
+        question.setUserId(userId);
+        return insert(question);
+    }
     public int insertOfEndTimeAndInputFormat(String endTime, String inputFormat) {
         Question question = new Question();
         question.setEndTime(endTime);
@@ -1580,6 +2030,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return insert(question);
     }
+    public int insertOfEndTimeAndContestId(String endTime, String contestId) {
+        Question question = new Question();
+        question.setEndTime(endTime);
+        question.setContestId(contestId);
+        return insert(question);
+    }
+    public int insertOfEndTimeAndUserId(String endTime, String userId) {
+        Question question = new Question();
+        question.setEndTime(endTime);
+        question.setUserId(userId);
+        return insert(question);
+    }
     public int insertOfInputFormatAndOutputFormat(String inputFormat, String outputFormat) {
         Question question = new Question();
         question.setInputFormat(inputFormat);
@@ -1598,6 +2060,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return insert(question);
     }
+    public int insertOfInputFormatAndContestId(String inputFormat, String contestId) {
+        Question question = new Question();
+        question.setInputFormat(inputFormat);
+        question.setContestId(contestId);
+        return insert(question);
+    }
+    public int insertOfInputFormatAndUserId(String inputFormat, String userId) {
+        Question question = new Question();
+        question.setInputFormat(inputFormat);
+        question.setUserId(userId);
+        return insert(question);
+    }
     public int insertOfOutputFormatAndInputTest(String outputFormat, String inputTest) {
         Question question = new Question();
         question.setOutputFormat(outputFormat);
@@ -1610,10 +2084,52 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return insert(question);
     }
+    public int insertOfOutputFormatAndContestId(String outputFormat, String contestId) {
+        Question question = new Question();
+        question.setOutputFormat(outputFormat);
+        question.setContestId(contestId);
+        return insert(question);
+    }
+    public int insertOfOutputFormatAndUserId(String outputFormat, String userId) {
+        Question question = new Question();
+        question.setOutputFormat(outputFormat);
+        question.setUserId(userId);
+        return insert(question);
+    }
     public int insertOfInputTestAndOutputTest(String inputTest, String outputTest) {
         Question question = new Question();
         question.setInputTest(inputTest);
         question.setOutputTest(outputTest);
+        return insert(question);
+    }
+    public int insertOfInputTestAndContestId(String inputTest, String contestId) {
+        Question question = new Question();
+        question.setInputTest(inputTest);
+        question.setContestId(contestId);
+        return insert(question);
+    }
+    public int insertOfInputTestAndUserId(String inputTest, String userId) {
+        Question question = new Question();
+        question.setInputTest(inputTest);
+        question.setUserId(userId);
+        return insert(question);
+    }
+    public int insertOfOutputTestAndContestId(String outputTest, String contestId) {
+        Question question = new Question();
+        question.setOutputTest(outputTest);
+        question.setContestId(contestId);
+        return insert(question);
+    }
+    public int insertOfOutputTestAndUserId(String outputTest, String userId) {
+        Question question = new Question();
+        question.setOutputTest(outputTest);
+        question.setUserId(userId);
+        return insert(question);
+    }
+    public int insertOfContestIdAndUserId(String contestId, String userId) {
+        Question question = new Question();
+        question.setContestId(contestId);
+        question.setUserId(userId);
         return insert(question);
     }
     public Question getQuestion(Question question) {
@@ -1682,6 +2198,16 @@ public class IQuestionDaoImpl implements IQuestionDao {
     public Question getQuestionOfOutputTest(String outputTest) {
         Question question = new Question();
         question.setOutputTest(outputTest);
+        return getQuestion(question);
+    }
+    public Question getQuestionOfContestId(String contestId) {
+        Question question = new Question();
+        question.setContestId(contestId);
+        return getQuestion(question);
+    }
+    public Question getQuestionOfUserId(String userId) {
+        Question question = new Question();
+        question.setUserId(userId);
         return getQuestion(question);
     }
     public Question getQuestionOfQuestionIdAndTitle(String questionId, String title) {
@@ -1756,6 +2282,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestion(question);
     }
+    public Question getQuestionOfQuestionIdAndContestId(String questionId, String contestId) {
+        Question question = new Question();
+        question.setQuestionId(questionId);
+        question.setContestId(contestId);
+        return getQuestion(question);
+    }
+    public Question getQuestionOfQuestionIdAndUserId(String questionId, String userId) {
+        Question question = new Question();
+        question.setQuestionId(questionId);
+        question.setUserId(userId);
+        return getQuestion(question);
+    }
     public Question getQuestionOfTitleAndBody(String title, String body) {
         Question question = new Question();
         question.setTitle(title);
@@ -1822,6 +2360,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestion(question);
     }
+    public Question getQuestionOfTitleAndContestId(String title, String contestId) {
+        Question question = new Question();
+        question.setTitle(title);
+        question.setContestId(contestId);
+        return getQuestion(question);
+    }
+    public Question getQuestionOfTitleAndUserId(String title, String userId) {
+        Question question = new Question();
+        question.setTitle(title);
+        question.setUserId(userId);
+        return getQuestion(question);
+    }
     public Question getQuestionOfBodyAndScore(String body, String score) {
         Question question = new Question();
         question.setBody(body);
@@ -1882,6 +2432,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestion(question);
     }
+    public Question getQuestionOfBodyAndContestId(String body, String contestId) {
+        Question question = new Question();
+        question.setBody(body);
+        question.setContestId(contestId);
+        return getQuestion(question);
+    }
+    public Question getQuestionOfBodyAndUserId(String body, String userId) {
+        Question question = new Question();
+        question.setBody(body);
+        question.setUserId(userId);
+        return getQuestion(question);
+    }
     public Question getQuestionOfScoreAndDemoCode(String score, String demoCode) {
         Question question = new Question();
         question.setScore(score);
@@ -1936,6 +2498,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestion(question);
     }
+    public Question getQuestionOfScoreAndContestId(String score, String contestId) {
+        Question question = new Question();
+        question.setScore(score);
+        question.setContestId(contestId);
+        return getQuestion(question);
+    }
+    public Question getQuestionOfScoreAndUserId(String score, String userId) {
+        Question question = new Question();
+        question.setScore(score);
+        question.setUserId(userId);
+        return getQuestion(question);
+    }
     public Question getQuestionOfDemoCodeAndRightPeople(String demoCode, String rightPeople) {
         Question question = new Question();
         question.setDemoCode(demoCode);
@@ -1984,6 +2558,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestion(question);
     }
+    public Question getQuestionOfDemoCodeAndContestId(String demoCode, String contestId) {
+        Question question = new Question();
+        question.setDemoCode(demoCode);
+        question.setContestId(contestId);
+        return getQuestion(question);
+    }
+    public Question getQuestionOfDemoCodeAndUserId(String demoCode, String userId) {
+        Question question = new Question();
+        question.setDemoCode(demoCode);
+        question.setUserId(userId);
+        return getQuestion(question);
+    }
     public Question getQuestionOfRightPeopleAndMainPeople(String rightPeople, String mainPeople) {
         Question question = new Question();
         question.setRightPeople(rightPeople);
@@ -2026,6 +2612,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestion(question);
     }
+    public Question getQuestionOfRightPeopleAndContestId(String rightPeople, String contestId) {
+        Question question = new Question();
+        question.setRightPeople(rightPeople);
+        question.setContestId(contestId);
+        return getQuestion(question);
+    }
+    public Question getQuestionOfRightPeopleAndUserId(String rightPeople, String userId) {
+        Question question = new Question();
+        question.setRightPeople(rightPeople);
+        question.setUserId(userId);
+        return getQuestion(question);
+    }
     public Question getQuestionOfMainPeopleAndStartTime(String mainPeople, String startTime) {
         Question question = new Question();
         question.setMainPeople(mainPeople);
@@ -2062,6 +2660,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestion(question);
     }
+    public Question getQuestionOfMainPeopleAndContestId(String mainPeople, String contestId) {
+        Question question = new Question();
+        question.setMainPeople(mainPeople);
+        question.setContestId(contestId);
+        return getQuestion(question);
+    }
+    public Question getQuestionOfMainPeopleAndUserId(String mainPeople, String userId) {
+        Question question = new Question();
+        question.setMainPeople(mainPeople);
+        question.setUserId(userId);
+        return getQuestion(question);
+    }
     public Question getQuestionOfStartTimeAndEndTime(String startTime, String endTime) {
         Question question = new Question();
         question.setStartTime(startTime);
@@ -2092,6 +2702,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestion(question);
     }
+    public Question getQuestionOfStartTimeAndContestId(String startTime, String contestId) {
+        Question question = new Question();
+        question.setStartTime(startTime);
+        question.setContestId(contestId);
+        return getQuestion(question);
+    }
+    public Question getQuestionOfStartTimeAndUserId(String startTime, String userId) {
+        Question question = new Question();
+        question.setStartTime(startTime);
+        question.setUserId(userId);
+        return getQuestion(question);
+    }
     public Question getQuestionOfEndTimeAndInputFormat(String endTime, String inputFormat) {
         Question question = new Question();
         question.setEndTime(endTime);
@@ -2116,6 +2738,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestion(question);
     }
+    public Question getQuestionOfEndTimeAndContestId(String endTime, String contestId) {
+        Question question = new Question();
+        question.setEndTime(endTime);
+        question.setContestId(contestId);
+        return getQuestion(question);
+    }
+    public Question getQuestionOfEndTimeAndUserId(String endTime, String userId) {
+        Question question = new Question();
+        question.setEndTime(endTime);
+        question.setUserId(userId);
+        return getQuestion(question);
+    }
     public Question getQuestionOfInputFormatAndOutputFormat(String inputFormat, String outputFormat) {
         Question question = new Question();
         question.setInputFormat(inputFormat);
@@ -2134,6 +2768,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestion(question);
     }
+    public Question getQuestionOfInputFormatAndContestId(String inputFormat, String contestId) {
+        Question question = new Question();
+        question.setInputFormat(inputFormat);
+        question.setContestId(contestId);
+        return getQuestion(question);
+    }
+    public Question getQuestionOfInputFormatAndUserId(String inputFormat, String userId) {
+        Question question = new Question();
+        question.setInputFormat(inputFormat);
+        question.setUserId(userId);
+        return getQuestion(question);
+    }
     public Question getQuestionOfOutputFormatAndInputTest(String outputFormat, String inputTest) {
         Question question = new Question();
         question.setOutputFormat(outputFormat);
@@ -2146,10 +2792,52 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestion(question);
     }
+    public Question getQuestionOfOutputFormatAndContestId(String outputFormat, String contestId) {
+        Question question = new Question();
+        question.setOutputFormat(outputFormat);
+        question.setContestId(contestId);
+        return getQuestion(question);
+    }
+    public Question getQuestionOfOutputFormatAndUserId(String outputFormat, String userId) {
+        Question question = new Question();
+        question.setOutputFormat(outputFormat);
+        question.setUserId(userId);
+        return getQuestion(question);
+    }
     public Question getQuestionOfInputTestAndOutputTest(String inputTest, String outputTest) {
         Question question = new Question();
         question.setInputTest(inputTest);
         question.setOutputTest(outputTest);
+        return getQuestion(question);
+    }
+    public Question getQuestionOfInputTestAndContestId(String inputTest, String contestId) {
+        Question question = new Question();
+        question.setInputTest(inputTest);
+        question.setContestId(contestId);
+        return getQuestion(question);
+    }
+    public Question getQuestionOfInputTestAndUserId(String inputTest, String userId) {
+        Question question = new Question();
+        question.setInputTest(inputTest);
+        question.setUserId(userId);
+        return getQuestion(question);
+    }
+    public Question getQuestionOfOutputTestAndContestId(String outputTest, String contestId) {
+        Question question = new Question();
+        question.setOutputTest(outputTest);
+        question.setContestId(contestId);
+        return getQuestion(question);
+    }
+    public Question getQuestionOfOutputTestAndUserId(String outputTest, String userId) {
+        Question question = new Question();
+        question.setOutputTest(outputTest);
+        question.setUserId(userId);
+        return getQuestion(question);
+    }
+    public Question getQuestionOfContestIdAndUserId(String contestId, String userId) {
+        Question question = new Question();
+        question.setContestId(contestId);
+        question.setUserId(userId);
         return getQuestion(question);
     }
     public List<Question> getQuestions(Question question) {
@@ -2218,6 +2906,16 @@ public class IQuestionDaoImpl implements IQuestionDao {
     public List<Question> getQuestionsOfOutputTest(String outputTest) {
         Question question = new Question();
         question.setOutputTest(outputTest);
+        return getQuestions(question);
+    }
+    public List<Question> getQuestionsOfContestId(String contestId) {
+        Question question = new Question();
+        question.setContestId(contestId);
+        return getQuestions(question);
+    }
+    public List<Question> getQuestionsOfUserId(String userId) {
+        Question question = new Question();
+        question.setUserId(userId);
         return getQuestions(question);
     }
     public List<Question> getQuestionsOfQuestionIdAndTitle(String questionId, String title) {
@@ -2292,6 +2990,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestions(question);
     }
+    public List<Question> getQuestionsOfQuestionIdAndContestId(String questionId, String contestId) {
+        Question question = new Question();
+        question.setQuestionId(questionId);
+        question.setContestId(contestId);
+        return getQuestions(question);
+    }
+    public List<Question> getQuestionsOfQuestionIdAndUserId(String questionId, String userId) {
+        Question question = new Question();
+        question.setQuestionId(questionId);
+        question.setUserId(userId);
+        return getQuestions(question);
+    }
     public List<Question> getQuestionsOfTitleAndBody(String title, String body) {
         Question question = new Question();
         question.setTitle(title);
@@ -2358,6 +3068,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestions(question);
     }
+    public List<Question> getQuestionsOfTitleAndContestId(String title, String contestId) {
+        Question question = new Question();
+        question.setTitle(title);
+        question.setContestId(contestId);
+        return getQuestions(question);
+    }
+    public List<Question> getQuestionsOfTitleAndUserId(String title, String userId) {
+        Question question = new Question();
+        question.setTitle(title);
+        question.setUserId(userId);
+        return getQuestions(question);
+    }
     public List<Question> getQuestionsOfBodyAndScore(String body, String score) {
         Question question = new Question();
         question.setBody(body);
@@ -2418,6 +3140,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestions(question);
     }
+    public List<Question> getQuestionsOfBodyAndContestId(String body, String contestId) {
+        Question question = new Question();
+        question.setBody(body);
+        question.setContestId(contestId);
+        return getQuestions(question);
+    }
+    public List<Question> getQuestionsOfBodyAndUserId(String body, String userId) {
+        Question question = new Question();
+        question.setBody(body);
+        question.setUserId(userId);
+        return getQuestions(question);
+    }
     public List<Question> getQuestionsOfScoreAndDemoCode(String score, String demoCode) {
         Question question = new Question();
         question.setScore(score);
@@ -2472,6 +3206,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestions(question);
     }
+    public List<Question> getQuestionsOfScoreAndContestId(String score, String contestId) {
+        Question question = new Question();
+        question.setScore(score);
+        question.setContestId(contestId);
+        return getQuestions(question);
+    }
+    public List<Question> getQuestionsOfScoreAndUserId(String score, String userId) {
+        Question question = new Question();
+        question.setScore(score);
+        question.setUserId(userId);
+        return getQuestions(question);
+    }
     public List<Question> getQuestionsOfDemoCodeAndRightPeople(String demoCode, String rightPeople) {
         Question question = new Question();
         question.setDemoCode(demoCode);
@@ -2520,6 +3266,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestions(question);
     }
+    public List<Question> getQuestionsOfDemoCodeAndContestId(String demoCode, String contestId) {
+        Question question = new Question();
+        question.setDemoCode(demoCode);
+        question.setContestId(contestId);
+        return getQuestions(question);
+    }
+    public List<Question> getQuestionsOfDemoCodeAndUserId(String demoCode, String userId) {
+        Question question = new Question();
+        question.setDemoCode(demoCode);
+        question.setUserId(userId);
+        return getQuestions(question);
+    }
     public List<Question> getQuestionsOfRightPeopleAndMainPeople(String rightPeople, String mainPeople) {
         Question question = new Question();
         question.setRightPeople(rightPeople);
@@ -2562,6 +3320,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestions(question);
     }
+    public List<Question> getQuestionsOfRightPeopleAndContestId(String rightPeople, String contestId) {
+        Question question = new Question();
+        question.setRightPeople(rightPeople);
+        question.setContestId(contestId);
+        return getQuestions(question);
+    }
+    public List<Question> getQuestionsOfRightPeopleAndUserId(String rightPeople, String userId) {
+        Question question = new Question();
+        question.setRightPeople(rightPeople);
+        question.setUserId(userId);
+        return getQuestions(question);
+    }
     public List<Question> getQuestionsOfMainPeopleAndStartTime(String mainPeople, String startTime) {
         Question question = new Question();
         question.setMainPeople(mainPeople);
@@ -2598,6 +3368,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestions(question);
     }
+    public List<Question> getQuestionsOfMainPeopleAndContestId(String mainPeople, String contestId) {
+        Question question = new Question();
+        question.setMainPeople(mainPeople);
+        question.setContestId(contestId);
+        return getQuestions(question);
+    }
+    public List<Question> getQuestionsOfMainPeopleAndUserId(String mainPeople, String userId) {
+        Question question = new Question();
+        question.setMainPeople(mainPeople);
+        question.setUserId(userId);
+        return getQuestions(question);
+    }
     public List<Question> getQuestionsOfStartTimeAndEndTime(String startTime, String endTime) {
         Question question = new Question();
         question.setStartTime(startTime);
@@ -2628,6 +3410,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestions(question);
     }
+    public List<Question> getQuestionsOfStartTimeAndContestId(String startTime, String contestId) {
+        Question question = new Question();
+        question.setStartTime(startTime);
+        question.setContestId(contestId);
+        return getQuestions(question);
+    }
+    public List<Question> getQuestionsOfStartTimeAndUserId(String startTime, String userId) {
+        Question question = new Question();
+        question.setStartTime(startTime);
+        question.setUserId(userId);
+        return getQuestions(question);
+    }
     public List<Question> getQuestionsOfEndTimeAndInputFormat(String endTime, String inputFormat) {
         Question question = new Question();
         question.setEndTime(endTime);
@@ -2652,6 +3446,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestions(question);
     }
+    public List<Question> getQuestionsOfEndTimeAndContestId(String endTime, String contestId) {
+        Question question = new Question();
+        question.setEndTime(endTime);
+        question.setContestId(contestId);
+        return getQuestions(question);
+    }
+    public List<Question> getQuestionsOfEndTimeAndUserId(String endTime, String userId) {
+        Question question = new Question();
+        question.setEndTime(endTime);
+        question.setUserId(userId);
+        return getQuestions(question);
+    }
     public List<Question> getQuestionsOfInputFormatAndOutputFormat(String inputFormat, String outputFormat) {
         Question question = new Question();
         question.setInputFormat(inputFormat);
@@ -2670,6 +3476,18 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestions(question);
     }
+    public List<Question> getQuestionsOfInputFormatAndContestId(String inputFormat, String contestId) {
+        Question question = new Question();
+        question.setInputFormat(inputFormat);
+        question.setContestId(contestId);
+        return getQuestions(question);
+    }
+    public List<Question> getQuestionsOfInputFormatAndUserId(String inputFormat, String userId) {
+        Question question = new Question();
+        question.setInputFormat(inputFormat);
+        question.setUserId(userId);
+        return getQuestions(question);
+    }
     public List<Question> getQuestionsOfOutputFormatAndInputTest(String outputFormat, String inputTest) {
         Question question = new Question();
         question.setOutputFormat(outputFormat);
@@ -2682,10 +3500,52 @@ public class IQuestionDaoImpl implements IQuestionDao {
         question.setOutputTest(outputTest);
         return getQuestions(question);
     }
+    public List<Question> getQuestionsOfOutputFormatAndContestId(String outputFormat, String contestId) {
+        Question question = new Question();
+        question.setOutputFormat(outputFormat);
+        question.setContestId(contestId);
+        return getQuestions(question);
+    }
+    public List<Question> getQuestionsOfOutputFormatAndUserId(String outputFormat, String userId) {
+        Question question = new Question();
+        question.setOutputFormat(outputFormat);
+        question.setUserId(userId);
+        return getQuestions(question);
+    }
     public List<Question> getQuestionsOfInputTestAndOutputTest(String inputTest, String outputTest) {
         Question question = new Question();
         question.setInputTest(inputTest);
         question.setOutputTest(outputTest);
+        return getQuestions(question);
+    }
+    public List<Question> getQuestionsOfInputTestAndContestId(String inputTest, String contestId) {
+        Question question = new Question();
+        question.setInputTest(inputTest);
+        question.setContestId(contestId);
+        return getQuestions(question);
+    }
+    public List<Question> getQuestionsOfInputTestAndUserId(String inputTest, String userId) {
+        Question question = new Question();
+        question.setInputTest(inputTest);
+        question.setUserId(userId);
+        return getQuestions(question);
+    }
+    public List<Question> getQuestionsOfOutputTestAndContestId(String outputTest, String contestId) {
+        Question question = new Question();
+        question.setOutputTest(outputTest);
+        question.setContestId(contestId);
+        return getQuestions(question);
+    }
+    public List<Question> getQuestionsOfOutputTestAndUserId(String outputTest, String userId) {
+        Question question = new Question();
+        question.setOutputTest(outputTest);
+        question.setUserId(userId);
+        return getQuestions(question);
+    }
+    public List<Question> getQuestionsOfContestIdAndUserId(String contestId, String userId) {
+        Question question = new Question();
+        question.setContestId(contestId);
+        question.setUserId(userId);
         return getQuestions(question);
     }
 }

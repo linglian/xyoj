@@ -14,6 +14,8 @@ public class Question {
     private String outputFormat;
     private String inputTest;
     private String outputTest;
+    private String contestId;
+    private String userId;
 
     public String getQuestionId() {
         return questionId;
@@ -119,9 +121,25 @@ public class Question {
         this.outputTest = outputTest;
     }
 
+    public String getContestId() {
+        return contestId;
+    }
+
+    public void setContestId(String contestId) {
+        this.contestId = contestId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
     @Override
     public String toString() {
-        return "Question [questionId=" + questionId + ", title=" + title + ", body=" + body + ", score=" + score + ", demoCode=" + demoCode + ", rightPeople=" + rightPeople + ", mainPeople=" + mainPeople + ", startTime=" + startTime + ", endTime=" + endTime + ", inputFormat=" + inputFormat + ", outputFormat=" + outputFormat + ", inputTest=" + inputTest + ", outputTest=" + outputTest + ", ]";
+        return "Question [questionId=" + questionId + ", title=" + title + ", body=" + body + ", score=" + score + ", demoCode=" + demoCode + ", rightPeople=" + rightPeople + ", mainPeople=" + mainPeople + ", startTime=" + startTime + ", endTime=" + endTime + ", inputFormat=" + inputFormat + ", outputFormat=" + outputFormat + ", inputTest=" + inputTest + ", outputTest=" + outputTest + ", contestId=" + contestId + ", userId=" + userId + ", ]";
     }
 
 }

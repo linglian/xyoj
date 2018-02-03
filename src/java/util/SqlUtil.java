@@ -115,6 +115,13 @@ public class SqlUtil {
         return this;
     }
 
+    public SqlUtil addAfterWheresOfNot(String[] names) {
+        for (int i = 0; i < names.length; i++) {
+            addAfterWheres(names[i], "!=", "AND");
+        }
+        return this;
+    }
+
     /**
      * 设置where之前的属性（按添加顺序进行添加）
      *

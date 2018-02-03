@@ -1,0 +1,63 @@
+package com.oj.linglian.service;
+
+import java.util.List;
+
+import com.oj.linglian.entity.Checker;
+
+public interface ICheckerService {
+    public int update(Checker checker, Checker keyChecker);
+    public int updateOfCheckerId(Checker checker, String checkerId);
+    public int updateOfInput(Checker checker, String input);
+    public int updateOfOutput(Checker checker, String output);
+    public int updateOfQuestionId(Checker checker, String questionId);
+    public int updateOfCheckerIdAndInput(Checker checker, String checkerId, String input);
+    public int updateOfCheckerIdAndOutput(Checker checker, String checkerId, String output);
+    public int updateOfCheckerIdAndQuestionId(Checker checker, String checkerId, String questionId);
+    public int updateOfInputAndOutput(Checker checker, String input, String output);
+    public int updateOfInputAndQuestionId(Checker checker, String input, String questionId);
+    public int updateOfOutputAndQuestionId(Checker checker, String output, String questionId);
+    public int remove(Checker checker);
+    public int removeOfCheckerId(String checkerId);
+    public int removeOfInput(String input);
+    public int removeOfOutput(String output);
+    public int removeOfQuestionId(String questionId);
+    public int removeOfCheckerIdAndInput(String checkerId, String input);
+    public int removeOfCheckerIdAndOutput(String checkerId, String output);
+    public int removeOfCheckerIdAndQuestionId(String checkerId, String questionId);
+    public int removeOfInputAndOutput(String input, String output);
+    public int removeOfInputAndQuestionId(String input, String questionId);
+    public int removeOfOutputAndQuestionId(String output, String questionId);
+    public int insert(Checker checker);
+    public int insertOfCheckerId(String checkerId);
+    public int insertOfInput(String input);
+    public int insertOfOutput(String output);
+    public int insertOfQuestionId(String questionId);
+    public int insertOfCheckerIdAndInput(String checkerId, String input);
+    public int insertOfCheckerIdAndOutput(String checkerId, String output);
+    public int insertOfCheckerIdAndQuestionId(String checkerId, String questionId);
+    public int insertOfInputAndOutput(String input, String output);
+    public int insertOfInputAndQuestionId(String input, String questionId);
+    public int insertOfOutputAndQuestionId(String output, String questionId);
+    public Checker getChecker(Checker checker);
+    public Checker getCheckerOfCheckerId(String checkerId);
+    public Checker getCheckerOfInput(String input);
+    public Checker getCheckerOfOutput(String output);
+    public Checker getCheckerOfQuestionId(String questionId);
+    public Checker getCheckerOfCheckerIdAndInput(String checkerId, String input);
+    public Checker getCheckerOfCheckerIdAndOutput(String checkerId, String output);
+    public Checker getCheckerOfCheckerIdAndQuestionId(String checkerId, String questionId);
+    public Checker getCheckerOfInputAndOutput(String input, String output);
+    public Checker getCheckerOfInputAndQuestionId(String input, String questionId);
+    public Checker getCheckerOfOutputAndQuestionId(String output, String questionId);
+    public List<Checker> getCheckers(Checker checker);
+    public List<Checker> getCheckersOfCheckerId(String checkerId);
+    public List<Checker> getCheckersOfInput(String input);
+    public List<Checker> getCheckersOfOutput(String output);
+    public List<Checker> getCheckersOfQuestionId(String questionId);
+    public List<Checker> getCheckersOfCheckerIdAndInput(String checkerId, String input);
+    public List<Checker> getCheckersOfCheckerIdAndOutput(String checkerId, String output);
+    public List<Checker> getCheckersOfCheckerIdAndQuestionId(String checkerId, String questionId);
+    public List<Checker> getCheckersOfInputAndOutput(String input, String output);
+    public List<Checker> getCheckersOfInputAndQuestionId(String input, String questionId);
+    public List<Checker> getCheckersOfOutputAndQuestionId(String output, String questionId);
+}

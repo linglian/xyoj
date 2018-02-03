@@ -12,15 +12,11 @@
         <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                 <title>向阳小队专版OJ</title>
-                <link rel="stylesheet" href="layui/css/layui.css"  media="all">
-                <link rel = "stylesheet" type = "text/css" href = "css/index.css"/>
-                <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script> <!-- 你必须先引入jQuery1.8或以上版本 -->
-                <script src="layer/layer.js"></script>
-                <script src="layui/layui.js"></script>
-                <c:if test="${not empty info}">
-                    <script>layer.msg('${info}')</script>
-                    <c:remove var="info" />
-                </c:if>
+                <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/comm/layui/css/layui.css" />
+                <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/comm/layui/css/modules/layer/default/layer.css" />
+                <script src="${pageContext.request.contextPath}/comm/layui/layui.js" charset="utf-8"></script>
+                <script src="${pageContext.request.contextPath}/comm/jquery/jquery-2.1.4.js"></script>
+                <script src="${pageContext.request.contextPath}/comm/layer/layer.js"></script>
                 <c:if test="${empty sessionScope.identity}">
                     <c:set var="info" value="尚未登录，请登录!" scope="session" />
                     <c:redirect url="login.jsp" />
@@ -50,22 +46,7 @@
                 </script>
         </head>
         <body class="layui-bg-gray">
-                <ul class="layui-nav">
-                        <li class="layui-nav-item">
-                                <a href="index.jsp">首页</a>
-                        </li>
-                        <li class="layui-nav-item">
-                                <a href="">个人中心<span class="layui-badge-dot"></span></a>
-                        </li>
-                        <li class="layui-nav-item">
-                                <a href=""><img src="http://t.cn/RCzsdCq" class="layui-nav-img">我</a>
-                                <dl class="layui-nav-child">
-                                        <dd><a href="javascript:;">修改信息</a></dd>
-                                        <dd><a href="javascript:;">安全管理</a></dd>
-                                        <dd><a href="javascript:;">退出</a></dd>
-                                </dl>
-                        </li>
-                </ul>
+                <c:import url="top.jsp" />
                 <fieldset class="layui-elem-field layui-field-title">
                         <legend><font style="font-size: 36px;">No.${sessionScope.showQuestion.questionId} ${sessionScope.showQuestion.title} <i class="layui-icon" style="font-size: 20px; color: #FFB800;">${sessionScope.showQuestion.score}&#xe65e;</i></font>
                                 <c:choose>  
@@ -79,7 +60,7 @@
                                     <c:otherwise>
                                         <c:choose>  
                                             <c:when test="${sessionScope.showQuestion.endTime - date >= 1000 * 60 * 60 * 24 *365}">
-                                                （彭倩最好了）
+                                                （永久开启）
                                                 <a href="QuestionAction?method=chose&questionId=${sessionScope.showQuestion.questionId}">
                                                         <button class="layui-btn layui-btn-danger"><i class="layui-icon">&#xe600;</i> 挑战</button>
                                                 </a>
@@ -123,19 +104,19 @@
                                                 <fieldset class="layui-elem-field">
                                                         <legend><b>输入样例</b></legend>
                                                         <div class="layui-field-box">
-                                                                <pre class="layui-code" lay-title="C++" lay-skin="notepad">${sessionScope.showQuestion.inputTest}</pre>
+                                                                <pre>${sessionScope.showQuestion.inputTest}</pre>
                                                         </div>
                                                 </fieldset>
                                                 <fieldset class="layui-elem-field">
                                                         <legend><b>输出样例</b></legend>
                                                         <div class="layui-field-box">
-                                                                <pre class="layui-code" lay-title="C++" lay-skin="notepad">${sessionScope.showQuestion.outputTest}</pre>
+                                                                <pre>${sessionScope.showQuestion.outputTest}</pre>
                                                         </div>
                                                 </fieldset>
                                         </div>
-                                        <c:if test="${not empty sessionScope.showQuestion.demoCode}">
+                                        <c:if test="${not empty sessionScope.showQuestion.demoCode && sessionScope.showQuestion.endTime - date <= 0}">
                                             <div class="layui-tab-item">
-                                                    <pre class="layui-code" lay-title="C++" lay-skin="notepad">${sessionScope.showQuestion.demoCode}</pre>
+                                                    <pre>${sessionScope.showQuestion.demoCode}</pre>
                                             </div>
                                         </c:if>
                                         <div class="layui-tab-item">

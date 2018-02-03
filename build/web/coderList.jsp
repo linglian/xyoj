@@ -11,44 +11,27 @@
 <!DOCTYPE html>
 <html>
         <head>
+                <meta http-equiv="refresh" content="5">
                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                 <title>向阳小队专版OJ</title>
-                <link rel="stylesheet" href="layui/css/layui.css"  media="all">
-                <link rel = "stylesheet" type = "text/css" href = "css/index.css"/>
-                <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script> <!-- 你必须先引入jQuery1.8或以上版本 -->
-                <script src="layer/layer.js"></script>
-                <script src="layui/layui.js"></script>
-                <c:if test="${not empty info}">
-                    <script>layer.msg('${info}')</script>
-                    <c:remove var="info" />
-                </c:if>
+                <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/comm/layui/css/layui.css" />
+                <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/comm/layui/css/modules/layer/default/layer.css" />
+                <script src="${pageContext.request.contextPath}/comm/layui/layui.js" charset="utf-8"></script>
+                <script src="${pageContext.request.contextPath}/comm/jquery/jquery-2.1.4.js"></script>
+                <script src="${pageContext.request.contextPath}/comm/layer/layer.js"></script>
                 <c:if test="${empty sessionScope.identity}">
                     <c:set var="info" value="尚未登录，请登录!" scope="session" />
                     <c:redirect url="login.jsp" />
                 </c:if>
         </head>
         <body>
-                <ul class="layui-nav">
-                        <li class="layui-nav-item">
-                                <a href="index.jsp">首页</a>
-                        </li>
-                        <li class="layui-nav-item">
-                                <a href="">个人中心<span class="layui-badge-dot"></span></a>
-                        </li>
-                        <li class="layui-nav-item">
-                                <a href=""><img src="http://t.cn/RCzsdCq" class="layui-nav-img">我</a>
-                                <dl class="layui-nav-child">
-                                        <dd><a href="javascript:;">修改信息</a></dd>
-                                        <dd><a href="javascript:;">安全管理</a></dd>
-                                        <dd><a href="javascript:;">退出</a></dd>
-                                </dl>
-                        </li>
-                </ul>
+                <c:import url="top.jsp" />
                 <table class="layui-table" lay-even lay-skin="nob">
                         <colgroup>
                                 <col width="50">
+                                <col width="150">
                                 <col width="50">
-                                <col width="200">
+                                <col width="50">
                                 <col width="50">
                                 <col width="50">
                                 <col width="50">
@@ -59,6 +42,7 @@
                                         <th>题目编号</th>
                                         <th>提交时间</th>
                                         <th>运行状态</th>
+                                        <th>运行时间</th>
                                         <th>提交者</th>
                                         <th>操作</th>
                                 </tr> 
@@ -67,7 +51,7 @@
                                 <c:forEach items="${applicationScope.coderList}" var="q" begin="${(coderPage - 1) * coderLimit}" end="${coderPage * coderLimit - 1}" varStatus="status">
                                     <tr>
                                             <td>No.${q.coderId}</td>
-                                            <td><a href="QuestionAction?method=get&questionId=${q.questionId}" style="color: #01AAED;">No.${q.questionId} （戳这里）</a></td>
+                                            <td><a href="QuestionAction?method=get&questionId=${q.questionId}" style="color: #01AAED;">No.${q.questionId} ${questionMap[q.questionId].title}</a></td>
                                             <td>
                                                     <jsp:useBean id="dateObject" class="java.util.Date" scope="page"></jsp:useBean>
                                                     <jsp:setProperty property="time" name="dateObject" value="${q.time}"/>
@@ -84,9 +68,25 @@
                                                     </c:choose>
                                             </td>
                                             <td>
-                                                    ${q.userId}
+                                                    <c:choose>  
+                                                        <c:when test="${empty q.status || q.status == 0}">
+                                                            未知
+                                                        </c:when>  
+                                                        <c:otherwise>
+                                                            ${q.endTime - q.startTime}ms
+                                                        </c:otherwise>  
+                                                    </c:choose>
                                             </td>
-                                            <td><a href="CoderAction?method=get&coderId=${q.coderId}"><button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe600;</i> 查看</button></a></td>
+                                            <td>
+                                                    <a href="${pageContext.request.contextPath}/UserAction?method=get&userId=${q.userId}" style="color: #01AAED;">
+                                                            ${q.userId}
+                                                    </a>
+                                            </td>
+                                            <td>
+                                                    <a href="CoderAction?method=get&coderId=${q.coderId}">
+                                                            <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe600;</i> 查看</button>
+                                                    </a>
+                                            </td>
                                     </tr>
                                 </c:forEach>
                         </tbody>

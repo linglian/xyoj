@@ -1,7 +1,7 @@
 package com.oj.linglian.OJ;
 
 import com.oj.linglian.entity.Coder;
-import com.oj.linglian.entity.Check;
+import com.oj.linglian.entity.Checker;
 import com.oj.linglian.entity.CoderBuilder;
 import java.io.BufferedReader;
 import java.io.File;
@@ -85,7 +85,8 @@ public class XYOJ {
     private String runGcc(long startTime)
             throws IOException, InterruptedException {
         this.run = Runtime.getRuntime();
-        String exe = "g++.exe \"c:\\code\\temp_" + startTime + ".cpp" + "\" -o \"" + "c:\\code\\temp" + "_" + startTime + ".exe" + "\" -g3 -I\"C:\\Program Files (x86)\\Dev-Cpp\\MinGW64\\include\" -I\"C:\\Program Files (x86)\\Dev-Cpp\\MinGW64\\x86_64-w64-mingw32\\include\" -I\"C:\\Program Files (x86)\\Dev-Cpp\\MinGW64\\lib\\gcc\\x86_64-w64-mingw32\\4.8.1\\include\" -I\"C:\\Program Files (x86)\\Dev-Cpp\\MinGW64\\lib\\gcc\\x86_64-w64-mingw32\\4.8.1\\include\\c++\" -L\"C:\\Program Files (x86)\\Dev-Cpp\\MinGW64\\lib\" -L\"C:\\Program Files (x86)\\Dev-Cpp\\MinGW64\\x86_64-w64-mingw32\\lib\" -static-libgcc -g3";
+        String exe = "g++.exe \"c:\\code\\temp_" + startTime + ".cpp" + "\" -o \"" + "c:\\code\\temp" + "_" + startTime + ".exe\" " + exeStr;
+        System.out.println(exe);
         this.p = this.run.exec(exe);
         this.p.waitFor();
         BufferedReader r = new BufferedReader(new InputStreamReader(this.p.getErrorStream()));
@@ -193,7 +194,7 @@ public class XYOJ {
         return null;
     }
 
-    public synchronized CoderBuilder getResult(CoderBuilder coder, List<Check> iaoList, long startTime) {
+    public synchronized CoderBuilder getResult(CoderBuilder coder, List<Checker> iaoList, long startTime) {
         try {
             String check = checkCode(coder.build());
             if (check != null) {
@@ -210,7 +211,7 @@ public class XYOJ {
             boolean isRight = true;
             StringBuffer resultList = new StringBuffer();
             if (iaoList != null) {
-                for (Check iao : iaoList) {
+                for (Checker iao : iaoList) {
                     String result = "";
                     result = runExe(coder.build(), iao.getInput(), startTime);
                     resultList.append(result).append("\n");
@@ -264,10 +265,10 @@ public class XYOJ {
             throws IOException, InterruptedException {
         Runnable b = new Runnable() {
             public void run() {
-                List<Check> al = new ArrayList();
-                Check ino;
+                List<Checker> al = new ArrayList();
+                Checker ino;
                 for (int i = 0; i < 10; i++) {
-                    ino = new Check();
+                    ino = new Checker();
                     ino.setInput(String.valueOf(i));
                     ino.setOutput(String.valueOf(i));
                     al.add(ino);

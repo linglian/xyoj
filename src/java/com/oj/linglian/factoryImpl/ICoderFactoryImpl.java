@@ -80,13 +80,15 @@ public class ICoderFactoryImpl implements IServletFactory {
 
     /**
      * 提交代码
+     *
      * @param request
      * @param response
      * @param servlet
      * @throws ServletException
-     * @throws IOException 
+     * @throws IOException
      */
-    public void doPush(HttpServletRequest request, HttpServletResponse response, HttpServlet servlet) throws ServletException, IOException {
+    public void doPush(HttpServletRequest request, HttpServletResponse response,
+            HttpServlet servlet) throws ServletException, IOException {
         Map<String, Object> tMap = new ServletCheckBuilder(request, response, servlet, "push_from")
                 .addNp("codes", "代码不能为空")
                 .addNs("question", "问题不能为空")
@@ -95,6 +97,7 @@ public class ICoderFactoryImpl implements IServletFactory {
         if (tMap != null) {
             String codes = tMap.get("par_codes").toString();
             Question q = (Question) request.getSession().getAttribute("question");
+            q = qis.getQuestionOfQuestionId(q.getQuestionId());
             User user = (User) request.getSession().getAttribute("identity");
             Coder coder = new Coder();
             coder.setUserId(user.getUserId());
@@ -110,7 +113,6 @@ public class ICoderFactoryImpl implements IServletFactory {
             if (ius.updateOfUserId(user, user.getUserId()) == 0) {
                 System.out.println("Push---" + user + "更新失败");
             }
-            XYOJQueue.getInstance().push(coder);
             q.setMainPeople(StringUtil.addInt(q.getMainPeople(), "1"));
             if (qis.updateOfQuestionId(q, q.getQuestionId()) == 0) {
                 System.out.println("Push---" + q + "更新失败");
@@ -121,11 +123,12 @@ public class ICoderFactoryImpl implements IServletFactory {
 
     /**
      * 根据编号获取代码
+     *
      * @param request
      * @param response
      * @param servlet
      * @throws ServletException
-     * @throws IOException 
+     * @throws IOException
      */
     public void doGet(HttpServletRequest request, HttpServletResponse response, HttpServlet servlet) throws ServletException, IOException {
         Map<String, Object> tMap = new ServletCheckBuilder(request, response, servlet, "get_from")
@@ -135,25 +138,32 @@ public class ICoderFactoryImpl implements IServletFactory {
         if (tMap != null) {
             String cid = request.getParameter("coderId");
             Coder c = ics.getCoderOfCoderId(cid);
-            request.getSession().setAttribute("coder", c);
-            request.getSession().setAttribute("showQuestion", qis.getQuestionOfQuestionId(c.getQuestionId()));
-            ServletUtil.forward(request, response, servlet, "get_to");
+            User user = (User) tMap.get("ses_identity");
+            Question q = qis.getQuestionOfQuestionId(c.getQuestionId());
+            if (user.getUserId().equals(c.getUserId()) || StringUtil.isSmallLong(q.getEndTime(), String.valueOf(new Date().getTime()))) {
+                request.getSession().setAttribute("coder", c);
+                request.getSession().setAttribute("showQuestion", q);
+                ServletUtil.forward(request, response, servlet, "get_to");
+            } else {
+                request.getSession().setAttribute("info", "现在还不能查看别人代码");
+                ServletUtil.forward(request, response, servlet, "get_from");
+            }
         }
     }
 
     /**
      * 获取全部代码
+     *
      * @param request
      * @param response
      * @param servlet
      * @throws ServletException
-     * @throws IOException 
+     * @throws IOException
      */
     public void doGetAll(HttpServletRequest request, HttpServletResponse response, HttpServlet servlet) throws ServletException, IOException {
         if (new Date().getTime() - time >= speedTime || request.getServletContext().getAttribute("coderList") == null) {
             request.getServletContext().setAttribute("coderList", ics.getCoders(new Coder()));
             List t = (List) request.getServletContext().getAttribute("coderList");
-            XYOJQueue.getInstance().setList(t);
             size = t.size();
             time = new Date().getTime();
             IStatusService iss = new IStatusServiceImpl();
@@ -167,11 +177,12 @@ public class ICoderFactoryImpl implements IServletFactory {
 
     /**
      * 获取分页代码
+     *
      * @param request
      * @param response
      * @param servlet
      * @throws ServletException
-     * @throws IOException 
+     * @throws IOException
      */
     public void doGetList(HttpServletRequest request, HttpServletResponse response, HttpServlet servlet) throws ServletException, IOException {
         this.doGetAll(request, response, servlet);

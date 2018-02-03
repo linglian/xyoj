@@ -56,6 +56,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int updateOfOutputTest(Question question, String outputTest) {
         return dao.updateOfOutputTest(question, outputTest);
     }
+    public int updateOfContestId(Question question, String contestId) {
+        return dao.updateOfContestId(question, contestId);
+    }
+    public int updateOfUserId(Question question, String userId) {
+        return dao.updateOfUserId(question, userId);
+    }
     public int updateOfQuestionIdAndTitle(Question question, String questionId, String title) {
         return dao.updateOfQuestionIdAndTitle(question, questionId, title);
     }
@@ -92,6 +98,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int updateOfQuestionIdAndOutputTest(Question question, String questionId, String outputTest) {
         return dao.updateOfQuestionIdAndOutputTest(question, questionId, outputTest);
     }
+    public int updateOfQuestionIdAndContestId(Question question, String questionId, String contestId) {
+        return dao.updateOfQuestionIdAndContestId(question, questionId, contestId);
+    }
+    public int updateOfQuestionIdAndUserId(Question question, String questionId, String userId) {
+        return dao.updateOfQuestionIdAndUserId(question, questionId, userId);
+    }
     public int updateOfTitleAndBody(Question question, String title, String body) {
         return dao.updateOfTitleAndBody(question, title, body);
     }
@@ -125,6 +137,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int updateOfTitleAndOutputTest(Question question, String title, String outputTest) {
         return dao.updateOfTitleAndOutputTest(question, title, outputTest);
     }
+    public int updateOfTitleAndContestId(Question question, String title, String contestId) {
+        return dao.updateOfTitleAndContestId(question, title, contestId);
+    }
+    public int updateOfTitleAndUserId(Question question, String title, String userId) {
+        return dao.updateOfTitleAndUserId(question, title, userId);
+    }
     public int updateOfBodyAndScore(Question question, String body, String score) {
         return dao.updateOfBodyAndScore(question, body, score);
     }
@@ -155,6 +173,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int updateOfBodyAndOutputTest(Question question, String body, String outputTest) {
         return dao.updateOfBodyAndOutputTest(question, body, outputTest);
     }
+    public int updateOfBodyAndContestId(Question question, String body, String contestId) {
+        return dao.updateOfBodyAndContestId(question, body, contestId);
+    }
+    public int updateOfBodyAndUserId(Question question, String body, String userId) {
+        return dao.updateOfBodyAndUserId(question, body, userId);
+    }
     public int updateOfScoreAndDemoCode(Question question, String score, String demoCode) {
         return dao.updateOfScoreAndDemoCode(question, score, demoCode);
     }
@@ -182,6 +206,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int updateOfScoreAndOutputTest(Question question, String score, String outputTest) {
         return dao.updateOfScoreAndOutputTest(question, score, outputTest);
     }
+    public int updateOfScoreAndContestId(Question question, String score, String contestId) {
+        return dao.updateOfScoreAndContestId(question, score, contestId);
+    }
+    public int updateOfScoreAndUserId(Question question, String score, String userId) {
+        return dao.updateOfScoreAndUserId(question, score, userId);
+    }
     public int updateOfDemoCodeAndRightPeople(Question question, String demoCode, String rightPeople) {
         return dao.updateOfDemoCodeAndRightPeople(question, demoCode, rightPeople);
     }
@@ -206,6 +236,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int updateOfDemoCodeAndOutputTest(Question question, String demoCode, String outputTest) {
         return dao.updateOfDemoCodeAndOutputTest(question, demoCode, outputTest);
     }
+    public int updateOfDemoCodeAndContestId(Question question, String demoCode, String contestId) {
+        return dao.updateOfDemoCodeAndContestId(question, demoCode, contestId);
+    }
+    public int updateOfDemoCodeAndUserId(Question question, String demoCode, String userId) {
+        return dao.updateOfDemoCodeAndUserId(question, demoCode, userId);
+    }
     public int updateOfRightPeopleAndMainPeople(Question question, String rightPeople, String mainPeople) {
         return dao.updateOfRightPeopleAndMainPeople(question, rightPeople, mainPeople);
     }
@@ -227,6 +263,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int updateOfRightPeopleAndOutputTest(Question question, String rightPeople, String outputTest) {
         return dao.updateOfRightPeopleAndOutputTest(question, rightPeople, outputTest);
     }
+    public int updateOfRightPeopleAndContestId(Question question, String rightPeople, String contestId) {
+        return dao.updateOfRightPeopleAndContestId(question, rightPeople, contestId);
+    }
+    public int updateOfRightPeopleAndUserId(Question question, String rightPeople, String userId) {
+        return dao.updateOfRightPeopleAndUserId(question, rightPeople, userId);
+    }
     public int updateOfMainPeopleAndStartTime(Question question, String mainPeople, String startTime) {
         return dao.updateOfMainPeopleAndStartTime(question, mainPeople, startTime);
     }
@@ -245,6 +287,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int updateOfMainPeopleAndOutputTest(Question question, String mainPeople, String outputTest) {
         return dao.updateOfMainPeopleAndOutputTest(question, mainPeople, outputTest);
     }
+    public int updateOfMainPeopleAndContestId(Question question, String mainPeople, String contestId) {
+        return dao.updateOfMainPeopleAndContestId(question, mainPeople, contestId);
+    }
+    public int updateOfMainPeopleAndUserId(Question question, String mainPeople, String userId) {
+        return dao.updateOfMainPeopleAndUserId(question, mainPeople, userId);
+    }
     public int updateOfStartTimeAndEndTime(Question question, String startTime, String endTime) {
         return dao.updateOfStartTimeAndEndTime(question, startTime, endTime);
     }
@@ -260,6 +308,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int updateOfStartTimeAndOutputTest(Question question, String startTime, String outputTest) {
         return dao.updateOfStartTimeAndOutputTest(question, startTime, outputTest);
     }
+    public int updateOfStartTimeAndContestId(Question question, String startTime, String contestId) {
+        return dao.updateOfStartTimeAndContestId(question, startTime, contestId);
+    }
+    public int updateOfStartTimeAndUserId(Question question, String startTime, String userId) {
+        return dao.updateOfStartTimeAndUserId(question, startTime, userId);
+    }
     public int updateOfEndTimeAndInputFormat(Question question, String endTime, String inputFormat) {
         return dao.updateOfEndTimeAndInputFormat(question, endTime, inputFormat);
     }
@@ -272,6 +326,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int updateOfEndTimeAndOutputTest(Question question, String endTime, String outputTest) {
         return dao.updateOfEndTimeAndOutputTest(question, endTime, outputTest);
     }
+    public int updateOfEndTimeAndContestId(Question question, String endTime, String contestId) {
+        return dao.updateOfEndTimeAndContestId(question, endTime, contestId);
+    }
+    public int updateOfEndTimeAndUserId(Question question, String endTime, String userId) {
+        return dao.updateOfEndTimeAndUserId(question, endTime, userId);
+    }
     public int updateOfInputFormatAndOutputFormat(Question question, String inputFormat, String outputFormat) {
         return dao.updateOfInputFormatAndOutputFormat(question, inputFormat, outputFormat);
     }
@@ -281,14 +341,41 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int updateOfInputFormatAndOutputTest(Question question, String inputFormat, String outputTest) {
         return dao.updateOfInputFormatAndOutputTest(question, inputFormat, outputTest);
     }
+    public int updateOfInputFormatAndContestId(Question question, String inputFormat, String contestId) {
+        return dao.updateOfInputFormatAndContestId(question, inputFormat, contestId);
+    }
+    public int updateOfInputFormatAndUserId(Question question, String inputFormat, String userId) {
+        return dao.updateOfInputFormatAndUserId(question, inputFormat, userId);
+    }
     public int updateOfOutputFormatAndInputTest(Question question, String outputFormat, String inputTest) {
         return dao.updateOfOutputFormatAndInputTest(question, outputFormat, inputTest);
     }
     public int updateOfOutputFormatAndOutputTest(Question question, String outputFormat, String outputTest) {
         return dao.updateOfOutputFormatAndOutputTest(question, outputFormat, outputTest);
     }
+    public int updateOfOutputFormatAndContestId(Question question, String outputFormat, String contestId) {
+        return dao.updateOfOutputFormatAndContestId(question, outputFormat, contestId);
+    }
+    public int updateOfOutputFormatAndUserId(Question question, String outputFormat, String userId) {
+        return dao.updateOfOutputFormatAndUserId(question, outputFormat, userId);
+    }
     public int updateOfInputTestAndOutputTest(Question question, String inputTest, String outputTest) {
         return dao.updateOfInputTestAndOutputTest(question, inputTest, outputTest);
+    }
+    public int updateOfInputTestAndContestId(Question question, String inputTest, String contestId) {
+        return dao.updateOfInputTestAndContestId(question, inputTest, contestId);
+    }
+    public int updateOfInputTestAndUserId(Question question, String inputTest, String userId) {
+        return dao.updateOfInputTestAndUserId(question, inputTest, userId);
+    }
+    public int updateOfOutputTestAndContestId(Question question, String outputTest, String contestId) {
+        return dao.updateOfOutputTestAndContestId(question, outputTest, contestId);
+    }
+    public int updateOfOutputTestAndUserId(Question question, String outputTest, String userId) {
+        return dao.updateOfOutputTestAndUserId(question, outputTest, userId);
+    }
+    public int updateOfContestIdAndUserId(Question question, String contestId, String userId) {
+        return dao.updateOfContestIdAndUserId(question, contestId, userId);
     }
     public int remove(Question question) {
         return dao.remove(question);
@@ -332,6 +419,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int removeOfOutputTest(String outputTest) {
         return dao.removeOfOutputTest(outputTest);
     }
+    public int removeOfContestId(String contestId) {
+        return dao.removeOfContestId(contestId);
+    }
+    public int removeOfUserId(String userId) {
+        return dao.removeOfUserId(userId);
+    }
     public int removeOfQuestionIdAndTitle(String questionId, String title) {
         return dao.removeOfQuestionIdAndTitle(questionId, title);
     }
@@ -368,6 +461,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int removeOfQuestionIdAndOutputTest(String questionId, String outputTest) {
         return dao.removeOfQuestionIdAndOutputTest(questionId, outputTest);
     }
+    public int removeOfQuestionIdAndContestId(String questionId, String contestId) {
+        return dao.removeOfQuestionIdAndContestId(questionId, contestId);
+    }
+    public int removeOfQuestionIdAndUserId(String questionId, String userId) {
+        return dao.removeOfQuestionIdAndUserId(questionId, userId);
+    }
     public int removeOfTitleAndBody(String title, String body) {
         return dao.removeOfTitleAndBody(title, body);
     }
@@ -401,6 +500,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int removeOfTitleAndOutputTest(String title, String outputTest) {
         return dao.removeOfTitleAndOutputTest(title, outputTest);
     }
+    public int removeOfTitleAndContestId(String title, String contestId) {
+        return dao.removeOfTitleAndContestId(title, contestId);
+    }
+    public int removeOfTitleAndUserId(String title, String userId) {
+        return dao.removeOfTitleAndUserId(title, userId);
+    }
     public int removeOfBodyAndScore(String body, String score) {
         return dao.removeOfBodyAndScore(body, score);
     }
@@ -431,6 +536,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int removeOfBodyAndOutputTest(String body, String outputTest) {
         return dao.removeOfBodyAndOutputTest(body, outputTest);
     }
+    public int removeOfBodyAndContestId(String body, String contestId) {
+        return dao.removeOfBodyAndContestId(body, contestId);
+    }
+    public int removeOfBodyAndUserId(String body, String userId) {
+        return dao.removeOfBodyAndUserId(body, userId);
+    }
     public int removeOfScoreAndDemoCode(String score, String demoCode) {
         return dao.removeOfScoreAndDemoCode(score, demoCode);
     }
@@ -458,6 +569,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int removeOfScoreAndOutputTest(String score, String outputTest) {
         return dao.removeOfScoreAndOutputTest(score, outputTest);
     }
+    public int removeOfScoreAndContestId(String score, String contestId) {
+        return dao.removeOfScoreAndContestId(score, contestId);
+    }
+    public int removeOfScoreAndUserId(String score, String userId) {
+        return dao.removeOfScoreAndUserId(score, userId);
+    }
     public int removeOfDemoCodeAndRightPeople(String demoCode, String rightPeople) {
         return dao.removeOfDemoCodeAndRightPeople(demoCode, rightPeople);
     }
@@ -482,6 +599,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int removeOfDemoCodeAndOutputTest(String demoCode, String outputTest) {
         return dao.removeOfDemoCodeAndOutputTest(demoCode, outputTest);
     }
+    public int removeOfDemoCodeAndContestId(String demoCode, String contestId) {
+        return dao.removeOfDemoCodeAndContestId(demoCode, contestId);
+    }
+    public int removeOfDemoCodeAndUserId(String demoCode, String userId) {
+        return dao.removeOfDemoCodeAndUserId(demoCode, userId);
+    }
     public int removeOfRightPeopleAndMainPeople(String rightPeople, String mainPeople) {
         return dao.removeOfRightPeopleAndMainPeople(rightPeople, mainPeople);
     }
@@ -503,6 +626,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int removeOfRightPeopleAndOutputTest(String rightPeople, String outputTest) {
         return dao.removeOfRightPeopleAndOutputTest(rightPeople, outputTest);
     }
+    public int removeOfRightPeopleAndContestId(String rightPeople, String contestId) {
+        return dao.removeOfRightPeopleAndContestId(rightPeople, contestId);
+    }
+    public int removeOfRightPeopleAndUserId(String rightPeople, String userId) {
+        return dao.removeOfRightPeopleAndUserId(rightPeople, userId);
+    }
     public int removeOfMainPeopleAndStartTime(String mainPeople, String startTime) {
         return dao.removeOfMainPeopleAndStartTime(mainPeople, startTime);
     }
@@ -521,6 +650,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int removeOfMainPeopleAndOutputTest(String mainPeople, String outputTest) {
         return dao.removeOfMainPeopleAndOutputTest(mainPeople, outputTest);
     }
+    public int removeOfMainPeopleAndContestId(String mainPeople, String contestId) {
+        return dao.removeOfMainPeopleAndContestId(mainPeople, contestId);
+    }
+    public int removeOfMainPeopleAndUserId(String mainPeople, String userId) {
+        return dao.removeOfMainPeopleAndUserId(mainPeople, userId);
+    }
     public int removeOfStartTimeAndEndTime(String startTime, String endTime) {
         return dao.removeOfStartTimeAndEndTime(startTime, endTime);
     }
@@ -536,6 +671,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int removeOfStartTimeAndOutputTest(String startTime, String outputTest) {
         return dao.removeOfStartTimeAndOutputTest(startTime, outputTest);
     }
+    public int removeOfStartTimeAndContestId(String startTime, String contestId) {
+        return dao.removeOfStartTimeAndContestId(startTime, contestId);
+    }
+    public int removeOfStartTimeAndUserId(String startTime, String userId) {
+        return dao.removeOfStartTimeAndUserId(startTime, userId);
+    }
     public int removeOfEndTimeAndInputFormat(String endTime, String inputFormat) {
         return dao.removeOfEndTimeAndInputFormat(endTime, inputFormat);
     }
@@ -548,6 +689,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int removeOfEndTimeAndOutputTest(String endTime, String outputTest) {
         return dao.removeOfEndTimeAndOutputTest(endTime, outputTest);
     }
+    public int removeOfEndTimeAndContestId(String endTime, String contestId) {
+        return dao.removeOfEndTimeAndContestId(endTime, contestId);
+    }
+    public int removeOfEndTimeAndUserId(String endTime, String userId) {
+        return dao.removeOfEndTimeAndUserId(endTime, userId);
+    }
     public int removeOfInputFormatAndOutputFormat(String inputFormat, String outputFormat) {
         return dao.removeOfInputFormatAndOutputFormat(inputFormat, outputFormat);
     }
@@ -557,14 +704,41 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int removeOfInputFormatAndOutputTest(String inputFormat, String outputTest) {
         return dao.removeOfInputFormatAndOutputTest(inputFormat, outputTest);
     }
+    public int removeOfInputFormatAndContestId(String inputFormat, String contestId) {
+        return dao.removeOfInputFormatAndContestId(inputFormat, contestId);
+    }
+    public int removeOfInputFormatAndUserId(String inputFormat, String userId) {
+        return dao.removeOfInputFormatAndUserId(inputFormat, userId);
+    }
     public int removeOfOutputFormatAndInputTest(String outputFormat, String inputTest) {
         return dao.removeOfOutputFormatAndInputTest(outputFormat, inputTest);
     }
     public int removeOfOutputFormatAndOutputTest(String outputFormat, String outputTest) {
         return dao.removeOfOutputFormatAndOutputTest(outputFormat, outputTest);
     }
+    public int removeOfOutputFormatAndContestId(String outputFormat, String contestId) {
+        return dao.removeOfOutputFormatAndContestId(outputFormat, contestId);
+    }
+    public int removeOfOutputFormatAndUserId(String outputFormat, String userId) {
+        return dao.removeOfOutputFormatAndUserId(outputFormat, userId);
+    }
     public int removeOfInputTestAndOutputTest(String inputTest, String outputTest) {
         return dao.removeOfInputTestAndOutputTest(inputTest, outputTest);
+    }
+    public int removeOfInputTestAndContestId(String inputTest, String contestId) {
+        return dao.removeOfInputTestAndContestId(inputTest, contestId);
+    }
+    public int removeOfInputTestAndUserId(String inputTest, String userId) {
+        return dao.removeOfInputTestAndUserId(inputTest, userId);
+    }
+    public int removeOfOutputTestAndContestId(String outputTest, String contestId) {
+        return dao.removeOfOutputTestAndContestId(outputTest, contestId);
+    }
+    public int removeOfOutputTestAndUserId(String outputTest, String userId) {
+        return dao.removeOfOutputTestAndUserId(outputTest, userId);
+    }
+    public int removeOfContestIdAndUserId(String contestId, String userId) {
+        return dao.removeOfContestIdAndUserId(contestId, userId);
     }
     public int insert(Question question) {
         return dao.insert(question);
@@ -608,6 +782,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int insertOfOutputTest(String outputTest) {
         return dao.insertOfOutputTest(outputTest);
     }
+    public int insertOfContestId(String contestId) {
+        return dao.insertOfContestId(contestId);
+    }
+    public int insertOfUserId(String userId) {
+        return dao.insertOfUserId(userId);
+    }
     public int insertOfQuestionIdAndTitle(String questionId, String title) {
         return dao.insertOfQuestionIdAndTitle(questionId, title);
     }
@@ -644,6 +824,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int insertOfQuestionIdAndOutputTest(String questionId, String outputTest) {
         return dao.insertOfQuestionIdAndOutputTest(questionId, outputTest);
     }
+    public int insertOfQuestionIdAndContestId(String questionId, String contestId) {
+        return dao.insertOfQuestionIdAndContestId(questionId, contestId);
+    }
+    public int insertOfQuestionIdAndUserId(String questionId, String userId) {
+        return dao.insertOfQuestionIdAndUserId(questionId, userId);
+    }
     public int insertOfTitleAndBody(String title, String body) {
         return dao.insertOfTitleAndBody(title, body);
     }
@@ -677,6 +863,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int insertOfTitleAndOutputTest(String title, String outputTest) {
         return dao.insertOfTitleAndOutputTest(title, outputTest);
     }
+    public int insertOfTitleAndContestId(String title, String contestId) {
+        return dao.insertOfTitleAndContestId(title, contestId);
+    }
+    public int insertOfTitleAndUserId(String title, String userId) {
+        return dao.insertOfTitleAndUserId(title, userId);
+    }
     public int insertOfBodyAndScore(String body, String score) {
         return dao.insertOfBodyAndScore(body, score);
     }
@@ -707,6 +899,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int insertOfBodyAndOutputTest(String body, String outputTest) {
         return dao.insertOfBodyAndOutputTest(body, outputTest);
     }
+    public int insertOfBodyAndContestId(String body, String contestId) {
+        return dao.insertOfBodyAndContestId(body, contestId);
+    }
+    public int insertOfBodyAndUserId(String body, String userId) {
+        return dao.insertOfBodyAndUserId(body, userId);
+    }
     public int insertOfScoreAndDemoCode(String score, String demoCode) {
         return dao.insertOfScoreAndDemoCode(score, demoCode);
     }
@@ -734,6 +932,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int insertOfScoreAndOutputTest(String score, String outputTest) {
         return dao.insertOfScoreAndOutputTest(score, outputTest);
     }
+    public int insertOfScoreAndContestId(String score, String contestId) {
+        return dao.insertOfScoreAndContestId(score, contestId);
+    }
+    public int insertOfScoreAndUserId(String score, String userId) {
+        return dao.insertOfScoreAndUserId(score, userId);
+    }
     public int insertOfDemoCodeAndRightPeople(String demoCode, String rightPeople) {
         return dao.insertOfDemoCodeAndRightPeople(demoCode, rightPeople);
     }
@@ -758,6 +962,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int insertOfDemoCodeAndOutputTest(String demoCode, String outputTest) {
         return dao.insertOfDemoCodeAndOutputTest(demoCode, outputTest);
     }
+    public int insertOfDemoCodeAndContestId(String demoCode, String contestId) {
+        return dao.insertOfDemoCodeAndContestId(demoCode, contestId);
+    }
+    public int insertOfDemoCodeAndUserId(String demoCode, String userId) {
+        return dao.insertOfDemoCodeAndUserId(demoCode, userId);
+    }
     public int insertOfRightPeopleAndMainPeople(String rightPeople, String mainPeople) {
         return dao.insertOfRightPeopleAndMainPeople(rightPeople, mainPeople);
     }
@@ -779,6 +989,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int insertOfRightPeopleAndOutputTest(String rightPeople, String outputTest) {
         return dao.insertOfRightPeopleAndOutputTest(rightPeople, outputTest);
     }
+    public int insertOfRightPeopleAndContestId(String rightPeople, String contestId) {
+        return dao.insertOfRightPeopleAndContestId(rightPeople, contestId);
+    }
+    public int insertOfRightPeopleAndUserId(String rightPeople, String userId) {
+        return dao.insertOfRightPeopleAndUserId(rightPeople, userId);
+    }
     public int insertOfMainPeopleAndStartTime(String mainPeople, String startTime) {
         return dao.insertOfMainPeopleAndStartTime(mainPeople, startTime);
     }
@@ -797,6 +1013,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int insertOfMainPeopleAndOutputTest(String mainPeople, String outputTest) {
         return dao.insertOfMainPeopleAndOutputTest(mainPeople, outputTest);
     }
+    public int insertOfMainPeopleAndContestId(String mainPeople, String contestId) {
+        return dao.insertOfMainPeopleAndContestId(mainPeople, contestId);
+    }
+    public int insertOfMainPeopleAndUserId(String mainPeople, String userId) {
+        return dao.insertOfMainPeopleAndUserId(mainPeople, userId);
+    }
     public int insertOfStartTimeAndEndTime(String startTime, String endTime) {
         return dao.insertOfStartTimeAndEndTime(startTime, endTime);
     }
@@ -812,6 +1034,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int insertOfStartTimeAndOutputTest(String startTime, String outputTest) {
         return dao.insertOfStartTimeAndOutputTest(startTime, outputTest);
     }
+    public int insertOfStartTimeAndContestId(String startTime, String contestId) {
+        return dao.insertOfStartTimeAndContestId(startTime, contestId);
+    }
+    public int insertOfStartTimeAndUserId(String startTime, String userId) {
+        return dao.insertOfStartTimeAndUserId(startTime, userId);
+    }
     public int insertOfEndTimeAndInputFormat(String endTime, String inputFormat) {
         return dao.insertOfEndTimeAndInputFormat(endTime, inputFormat);
     }
@@ -824,6 +1052,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int insertOfEndTimeAndOutputTest(String endTime, String outputTest) {
         return dao.insertOfEndTimeAndOutputTest(endTime, outputTest);
     }
+    public int insertOfEndTimeAndContestId(String endTime, String contestId) {
+        return dao.insertOfEndTimeAndContestId(endTime, contestId);
+    }
+    public int insertOfEndTimeAndUserId(String endTime, String userId) {
+        return dao.insertOfEndTimeAndUserId(endTime, userId);
+    }
     public int insertOfInputFormatAndOutputFormat(String inputFormat, String outputFormat) {
         return dao.insertOfInputFormatAndOutputFormat(inputFormat, outputFormat);
     }
@@ -833,14 +1067,41 @@ public class IQuestionServiceImpl implements IQuestionService {
     public int insertOfInputFormatAndOutputTest(String inputFormat, String outputTest) {
         return dao.insertOfInputFormatAndOutputTest(inputFormat, outputTest);
     }
+    public int insertOfInputFormatAndContestId(String inputFormat, String contestId) {
+        return dao.insertOfInputFormatAndContestId(inputFormat, contestId);
+    }
+    public int insertOfInputFormatAndUserId(String inputFormat, String userId) {
+        return dao.insertOfInputFormatAndUserId(inputFormat, userId);
+    }
     public int insertOfOutputFormatAndInputTest(String outputFormat, String inputTest) {
         return dao.insertOfOutputFormatAndInputTest(outputFormat, inputTest);
     }
     public int insertOfOutputFormatAndOutputTest(String outputFormat, String outputTest) {
         return dao.insertOfOutputFormatAndOutputTest(outputFormat, outputTest);
     }
+    public int insertOfOutputFormatAndContestId(String outputFormat, String contestId) {
+        return dao.insertOfOutputFormatAndContestId(outputFormat, contestId);
+    }
+    public int insertOfOutputFormatAndUserId(String outputFormat, String userId) {
+        return dao.insertOfOutputFormatAndUserId(outputFormat, userId);
+    }
     public int insertOfInputTestAndOutputTest(String inputTest, String outputTest) {
         return dao.insertOfInputTestAndOutputTest(inputTest, outputTest);
+    }
+    public int insertOfInputTestAndContestId(String inputTest, String contestId) {
+        return dao.insertOfInputTestAndContestId(inputTest, contestId);
+    }
+    public int insertOfInputTestAndUserId(String inputTest, String userId) {
+        return dao.insertOfInputTestAndUserId(inputTest, userId);
+    }
+    public int insertOfOutputTestAndContestId(String outputTest, String contestId) {
+        return dao.insertOfOutputTestAndContestId(outputTest, contestId);
+    }
+    public int insertOfOutputTestAndUserId(String outputTest, String userId) {
+        return dao.insertOfOutputTestAndUserId(outputTest, userId);
+    }
+    public int insertOfContestIdAndUserId(String contestId, String userId) {
+        return dao.insertOfContestIdAndUserId(contestId, userId);
     }
     public Question getQuestion(Question question) {
         return dao.getQuestion(question);
@@ -884,6 +1145,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public Question getQuestionOfOutputTest(String outputTest) {
         return dao.getQuestionOfOutputTest(outputTest);
     }
+    public Question getQuestionOfContestId(String contestId) {
+        return dao.getQuestionOfContestId(contestId);
+    }
+    public Question getQuestionOfUserId(String userId) {
+        return dao.getQuestionOfUserId(userId);
+    }
     public Question getQuestionOfQuestionIdAndTitle(String questionId, String title) {
         return dao.getQuestionOfQuestionIdAndTitle(questionId, title);
     }
@@ -920,6 +1187,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public Question getQuestionOfQuestionIdAndOutputTest(String questionId, String outputTest) {
         return dao.getQuestionOfQuestionIdAndOutputTest(questionId, outputTest);
     }
+    public Question getQuestionOfQuestionIdAndContestId(String questionId, String contestId) {
+        return dao.getQuestionOfQuestionIdAndContestId(questionId, contestId);
+    }
+    public Question getQuestionOfQuestionIdAndUserId(String questionId, String userId) {
+        return dao.getQuestionOfQuestionIdAndUserId(questionId, userId);
+    }
     public Question getQuestionOfTitleAndBody(String title, String body) {
         return dao.getQuestionOfTitleAndBody(title, body);
     }
@@ -953,6 +1226,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public Question getQuestionOfTitleAndOutputTest(String title, String outputTest) {
         return dao.getQuestionOfTitleAndOutputTest(title, outputTest);
     }
+    public Question getQuestionOfTitleAndContestId(String title, String contestId) {
+        return dao.getQuestionOfTitleAndContestId(title, contestId);
+    }
+    public Question getQuestionOfTitleAndUserId(String title, String userId) {
+        return dao.getQuestionOfTitleAndUserId(title, userId);
+    }
     public Question getQuestionOfBodyAndScore(String body, String score) {
         return dao.getQuestionOfBodyAndScore(body, score);
     }
@@ -983,6 +1262,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public Question getQuestionOfBodyAndOutputTest(String body, String outputTest) {
         return dao.getQuestionOfBodyAndOutputTest(body, outputTest);
     }
+    public Question getQuestionOfBodyAndContestId(String body, String contestId) {
+        return dao.getQuestionOfBodyAndContestId(body, contestId);
+    }
+    public Question getQuestionOfBodyAndUserId(String body, String userId) {
+        return dao.getQuestionOfBodyAndUserId(body, userId);
+    }
     public Question getQuestionOfScoreAndDemoCode(String score, String demoCode) {
         return dao.getQuestionOfScoreAndDemoCode(score, demoCode);
     }
@@ -1010,6 +1295,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public Question getQuestionOfScoreAndOutputTest(String score, String outputTest) {
         return dao.getQuestionOfScoreAndOutputTest(score, outputTest);
     }
+    public Question getQuestionOfScoreAndContestId(String score, String contestId) {
+        return dao.getQuestionOfScoreAndContestId(score, contestId);
+    }
+    public Question getQuestionOfScoreAndUserId(String score, String userId) {
+        return dao.getQuestionOfScoreAndUserId(score, userId);
+    }
     public Question getQuestionOfDemoCodeAndRightPeople(String demoCode, String rightPeople) {
         return dao.getQuestionOfDemoCodeAndRightPeople(demoCode, rightPeople);
     }
@@ -1034,6 +1325,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public Question getQuestionOfDemoCodeAndOutputTest(String demoCode, String outputTest) {
         return dao.getQuestionOfDemoCodeAndOutputTest(demoCode, outputTest);
     }
+    public Question getQuestionOfDemoCodeAndContestId(String demoCode, String contestId) {
+        return dao.getQuestionOfDemoCodeAndContestId(demoCode, contestId);
+    }
+    public Question getQuestionOfDemoCodeAndUserId(String demoCode, String userId) {
+        return dao.getQuestionOfDemoCodeAndUserId(demoCode, userId);
+    }
     public Question getQuestionOfRightPeopleAndMainPeople(String rightPeople, String mainPeople) {
         return dao.getQuestionOfRightPeopleAndMainPeople(rightPeople, mainPeople);
     }
@@ -1055,6 +1352,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public Question getQuestionOfRightPeopleAndOutputTest(String rightPeople, String outputTest) {
         return dao.getQuestionOfRightPeopleAndOutputTest(rightPeople, outputTest);
     }
+    public Question getQuestionOfRightPeopleAndContestId(String rightPeople, String contestId) {
+        return dao.getQuestionOfRightPeopleAndContestId(rightPeople, contestId);
+    }
+    public Question getQuestionOfRightPeopleAndUserId(String rightPeople, String userId) {
+        return dao.getQuestionOfRightPeopleAndUserId(rightPeople, userId);
+    }
     public Question getQuestionOfMainPeopleAndStartTime(String mainPeople, String startTime) {
         return dao.getQuestionOfMainPeopleAndStartTime(mainPeople, startTime);
     }
@@ -1073,6 +1376,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public Question getQuestionOfMainPeopleAndOutputTest(String mainPeople, String outputTest) {
         return dao.getQuestionOfMainPeopleAndOutputTest(mainPeople, outputTest);
     }
+    public Question getQuestionOfMainPeopleAndContestId(String mainPeople, String contestId) {
+        return dao.getQuestionOfMainPeopleAndContestId(mainPeople, contestId);
+    }
+    public Question getQuestionOfMainPeopleAndUserId(String mainPeople, String userId) {
+        return dao.getQuestionOfMainPeopleAndUserId(mainPeople, userId);
+    }
     public Question getQuestionOfStartTimeAndEndTime(String startTime, String endTime) {
         return dao.getQuestionOfStartTimeAndEndTime(startTime, endTime);
     }
@@ -1088,6 +1397,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public Question getQuestionOfStartTimeAndOutputTest(String startTime, String outputTest) {
         return dao.getQuestionOfStartTimeAndOutputTest(startTime, outputTest);
     }
+    public Question getQuestionOfStartTimeAndContestId(String startTime, String contestId) {
+        return dao.getQuestionOfStartTimeAndContestId(startTime, contestId);
+    }
+    public Question getQuestionOfStartTimeAndUserId(String startTime, String userId) {
+        return dao.getQuestionOfStartTimeAndUserId(startTime, userId);
+    }
     public Question getQuestionOfEndTimeAndInputFormat(String endTime, String inputFormat) {
         return dao.getQuestionOfEndTimeAndInputFormat(endTime, inputFormat);
     }
@@ -1100,6 +1415,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public Question getQuestionOfEndTimeAndOutputTest(String endTime, String outputTest) {
         return dao.getQuestionOfEndTimeAndOutputTest(endTime, outputTest);
     }
+    public Question getQuestionOfEndTimeAndContestId(String endTime, String contestId) {
+        return dao.getQuestionOfEndTimeAndContestId(endTime, contestId);
+    }
+    public Question getQuestionOfEndTimeAndUserId(String endTime, String userId) {
+        return dao.getQuestionOfEndTimeAndUserId(endTime, userId);
+    }
     public Question getQuestionOfInputFormatAndOutputFormat(String inputFormat, String outputFormat) {
         return dao.getQuestionOfInputFormatAndOutputFormat(inputFormat, outputFormat);
     }
@@ -1109,14 +1430,41 @@ public class IQuestionServiceImpl implements IQuestionService {
     public Question getQuestionOfInputFormatAndOutputTest(String inputFormat, String outputTest) {
         return dao.getQuestionOfInputFormatAndOutputTest(inputFormat, outputTest);
     }
+    public Question getQuestionOfInputFormatAndContestId(String inputFormat, String contestId) {
+        return dao.getQuestionOfInputFormatAndContestId(inputFormat, contestId);
+    }
+    public Question getQuestionOfInputFormatAndUserId(String inputFormat, String userId) {
+        return dao.getQuestionOfInputFormatAndUserId(inputFormat, userId);
+    }
     public Question getQuestionOfOutputFormatAndInputTest(String outputFormat, String inputTest) {
         return dao.getQuestionOfOutputFormatAndInputTest(outputFormat, inputTest);
     }
     public Question getQuestionOfOutputFormatAndOutputTest(String outputFormat, String outputTest) {
         return dao.getQuestionOfOutputFormatAndOutputTest(outputFormat, outputTest);
     }
+    public Question getQuestionOfOutputFormatAndContestId(String outputFormat, String contestId) {
+        return dao.getQuestionOfOutputFormatAndContestId(outputFormat, contestId);
+    }
+    public Question getQuestionOfOutputFormatAndUserId(String outputFormat, String userId) {
+        return dao.getQuestionOfOutputFormatAndUserId(outputFormat, userId);
+    }
     public Question getQuestionOfInputTestAndOutputTest(String inputTest, String outputTest) {
         return dao.getQuestionOfInputTestAndOutputTest(inputTest, outputTest);
+    }
+    public Question getQuestionOfInputTestAndContestId(String inputTest, String contestId) {
+        return dao.getQuestionOfInputTestAndContestId(inputTest, contestId);
+    }
+    public Question getQuestionOfInputTestAndUserId(String inputTest, String userId) {
+        return dao.getQuestionOfInputTestAndUserId(inputTest, userId);
+    }
+    public Question getQuestionOfOutputTestAndContestId(String outputTest, String contestId) {
+        return dao.getQuestionOfOutputTestAndContestId(outputTest, contestId);
+    }
+    public Question getQuestionOfOutputTestAndUserId(String outputTest, String userId) {
+        return dao.getQuestionOfOutputTestAndUserId(outputTest, userId);
+    }
+    public Question getQuestionOfContestIdAndUserId(String contestId, String userId) {
+        return dao.getQuestionOfContestIdAndUserId(contestId, userId);
     }
     public List<Question> getQuestions(Question question) {
         return dao.getQuestions(question);
@@ -1160,6 +1508,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public List<Question> getQuestionsOfOutputTest(String outputTest) {
         return dao.getQuestionsOfOutputTest(outputTest);
     }
+    public List<Question> getQuestionsOfContestId(String contestId) {
+        return dao.getQuestionsOfContestId(contestId);
+    }
+    public List<Question> getQuestionsOfUserId(String userId) {
+        return dao.getQuestionsOfUserId(userId);
+    }
     public List<Question> getQuestionsOfQuestionIdAndTitle(String questionId, String title) {
         return dao.getQuestionsOfQuestionIdAndTitle(questionId, title);
     }
@@ -1196,6 +1550,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public List<Question> getQuestionsOfQuestionIdAndOutputTest(String questionId, String outputTest) {
         return dao.getQuestionsOfQuestionIdAndOutputTest(questionId, outputTest);
     }
+    public List<Question> getQuestionsOfQuestionIdAndContestId(String questionId, String contestId) {
+        return dao.getQuestionsOfQuestionIdAndContestId(questionId, contestId);
+    }
+    public List<Question> getQuestionsOfQuestionIdAndUserId(String questionId, String userId) {
+        return dao.getQuestionsOfQuestionIdAndUserId(questionId, userId);
+    }
     public List<Question> getQuestionsOfTitleAndBody(String title, String body) {
         return dao.getQuestionsOfTitleAndBody(title, body);
     }
@@ -1229,6 +1589,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public List<Question> getQuestionsOfTitleAndOutputTest(String title, String outputTest) {
         return dao.getQuestionsOfTitleAndOutputTest(title, outputTest);
     }
+    public List<Question> getQuestionsOfTitleAndContestId(String title, String contestId) {
+        return dao.getQuestionsOfTitleAndContestId(title, contestId);
+    }
+    public List<Question> getQuestionsOfTitleAndUserId(String title, String userId) {
+        return dao.getQuestionsOfTitleAndUserId(title, userId);
+    }
     public List<Question> getQuestionsOfBodyAndScore(String body, String score) {
         return dao.getQuestionsOfBodyAndScore(body, score);
     }
@@ -1259,6 +1625,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public List<Question> getQuestionsOfBodyAndOutputTest(String body, String outputTest) {
         return dao.getQuestionsOfBodyAndOutputTest(body, outputTest);
     }
+    public List<Question> getQuestionsOfBodyAndContestId(String body, String contestId) {
+        return dao.getQuestionsOfBodyAndContestId(body, contestId);
+    }
+    public List<Question> getQuestionsOfBodyAndUserId(String body, String userId) {
+        return dao.getQuestionsOfBodyAndUserId(body, userId);
+    }
     public List<Question> getQuestionsOfScoreAndDemoCode(String score, String demoCode) {
         return dao.getQuestionsOfScoreAndDemoCode(score, demoCode);
     }
@@ -1286,6 +1658,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public List<Question> getQuestionsOfScoreAndOutputTest(String score, String outputTest) {
         return dao.getQuestionsOfScoreAndOutputTest(score, outputTest);
     }
+    public List<Question> getQuestionsOfScoreAndContestId(String score, String contestId) {
+        return dao.getQuestionsOfScoreAndContestId(score, contestId);
+    }
+    public List<Question> getQuestionsOfScoreAndUserId(String score, String userId) {
+        return dao.getQuestionsOfScoreAndUserId(score, userId);
+    }
     public List<Question> getQuestionsOfDemoCodeAndRightPeople(String demoCode, String rightPeople) {
         return dao.getQuestionsOfDemoCodeAndRightPeople(demoCode, rightPeople);
     }
@@ -1310,6 +1688,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public List<Question> getQuestionsOfDemoCodeAndOutputTest(String demoCode, String outputTest) {
         return dao.getQuestionsOfDemoCodeAndOutputTest(demoCode, outputTest);
     }
+    public List<Question> getQuestionsOfDemoCodeAndContestId(String demoCode, String contestId) {
+        return dao.getQuestionsOfDemoCodeAndContestId(demoCode, contestId);
+    }
+    public List<Question> getQuestionsOfDemoCodeAndUserId(String demoCode, String userId) {
+        return dao.getQuestionsOfDemoCodeAndUserId(demoCode, userId);
+    }
     public List<Question> getQuestionsOfRightPeopleAndMainPeople(String rightPeople, String mainPeople) {
         return dao.getQuestionsOfRightPeopleAndMainPeople(rightPeople, mainPeople);
     }
@@ -1331,6 +1715,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public List<Question> getQuestionsOfRightPeopleAndOutputTest(String rightPeople, String outputTest) {
         return dao.getQuestionsOfRightPeopleAndOutputTest(rightPeople, outputTest);
     }
+    public List<Question> getQuestionsOfRightPeopleAndContestId(String rightPeople, String contestId) {
+        return dao.getQuestionsOfRightPeopleAndContestId(rightPeople, contestId);
+    }
+    public List<Question> getQuestionsOfRightPeopleAndUserId(String rightPeople, String userId) {
+        return dao.getQuestionsOfRightPeopleAndUserId(rightPeople, userId);
+    }
     public List<Question> getQuestionsOfMainPeopleAndStartTime(String mainPeople, String startTime) {
         return dao.getQuestionsOfMainPeopleAndStartTime(mainPeople, startTime);
     }
@@ -1349,6 +1739,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public List<Question> getQuestionsOfMainPeopleAndOutputTest(String mainPeople, String outputTest) {
         return dao.getQuestionsOfMainPeopleAndOutputTest(mainPeople, outputTest);
     }
+    public List<Question> getQuestionsOfMainPeopleAndContestId(String mainPeople, String contestId) {
+        return dao.getQuestionsOfMainPeopleAndContestId(mainPeople, contestId);
+    }
+    public List<Question> getQuestionsOfMainPeopleAndUserId(String mainPeople, String userId) {
+        return dao.getQuestionsOfMainPeopleAndUserId(mainPeople, userId);
+    }
     public List<Question> getQuestionsOfStartTimeAndEndTime(String startTime, String endTime) {
         return dao.getQuestionsOfStartTimeAndEndTime(startTime, endTime);
     }
@@ -1364,6 +1760,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public List<Question> getQuestionsOfStartTimeAndOutputTest(String startTime, String outputTest) {
         return dao.getQuestionsOfStartTimeAndOutputTest(startTime, outputTest);
     }
+    public List<Question> getQuestionsOfStartTimeAndContestId(String startTime, String contestId) {
+        return dao.getQuestionsOfStartTimeAndContestId(startTime, contestId);
+    }
+    public List<Question> getQuestionsOfStartTimeAndUserId(String startTime, String userId) {
+        return dao.getQuestionsOfStartTimeAndUserId(startTime, userId);
+    }
     public List<Question> getQuestionsOfEndTimeAndInputFormat(String endTime, String inputFormat) {
         return dao.getQuestionsOfEndTimeAndInputFormat(endTime, inputFormat);
     }
@@ -1376,6 +1778,12 @@ public class IQuestionServiceImpl implements IQuestionService {
     public List<Question> getQuestionsOfEndTimeAndOutputTest(String endTime, String outputTest) {
         return dao.getQuestionsOfEndTimeAndOutputTest(endTime, outputTest);
     }
+    public List<Question> getQuestionsOfEndTimeAndContestId(String endTime, String contestId) {
+        return dao.getQuestionsOfEndTimeAndContestId(endTime, contestId);
+    }
+    public List<Question> getQuestionsOfEndTimeAndUserId(String endTime, String userId) {
+        return dao.getQuestionsOfEndTimeAndUserId(endTime, userId);
+    }
     public List<Question> getQuestionsOfInputFormatAndOutputFormat(String inputFormat, String outputFormat) {
         return dao.getQuestionsOfInputFormatAndOutputFormat(inputFormat, outputFormat);
     }
@@ -1385,13 +1793,40 @@ public class IQuestionServiceImpl implements IQuestionService {
     public List<Question> getQuestionsOfInputFormatAndOutputTest(String inputFormat, String outputTest) {
         return dao.getQuestionsOfInputFormatAndOutputTest(inputFormat, outputTest);
     }
+    public List<Question> getQuestionsOfInputFormatAndContestId(String inputFormat, String contestId) {
+        return dao.getQuestionsOfInputFormatAndContestId(inputFormat, contestId);
+    }
+    public List<Question> getQuestionsOfInputFormatAndUserId(String inputFormat, String userId) {
+        return dao.getQuestionsOfInputFormatAndUserId(inputFormat, userId);
+    }
     public List<Question> getQuestionsOfOutputFormatAndInputTest(String outputFormat, String inputTest) {
         return dao.getQuestionsOfOutputFormatAndInputTest(outputFormat, inputTest);
     }
     public List<Question> getQuestionsOfOutputFormatAndOutputTest(String outputFormat, String outputTest) {
         return dao.getQuestionsOfOutputFormatAndOutputTest(outputFormat, outputTest);
     }
+    public List<Question> getQuestionsOfOutputFormatAndContestId(String outputFormat, String contestId) {
+        return dao.getQuestionsOfOutputFormatAndContestId(outputFormat, contestId);
+    }
+    public List<Question> getQuestionsOfOutputFormatAndUserId(String outputFormat, String userId) {
+        return dao.getQuestionsOfOutputFormatAndUserId(outputFormat, userId);
+    }
     public List<Question> getQuestionsOfInputTestAndOutputTest(String inputTest, String outputTest) {
         return dao.getQuestionsOfInputTestAndOutputTest(inputTest, outputTest);
+    }
+    public List<Question> getQuestionsOfInputTestAndContestId(String inputTest, String contestId) {
+        return dao.getQuestionsOfInputTestAndContestId(inputTest, contestId);
+    }
+    public List<Question> getQuestionsOfInputTestAndUserId(String inputTest, String userId) {
+        return dao.getQuestionsOfInputTestAndUserId(inputTest, userId);
+    }
+    public List<Question> getQuestionsOfOutputTestAndContestId(String outputTest, String contestId) {
+        return dao.getQuestionsOfOutputTestAndContestId(outputTest, contestId);
+    }
+    public List<Question> getQuestionsOfOutputTestAndUserId(String outputTest, String userId) {
+        return dao.getQuestionsOfOutputTestAndUserId(outputTest, userId);
+    }
+    public List<Question> getQuestionsOfContestIdAndUserId(String contestId, String userId) {
+        return dao.getQuestionsOfContestIdAndUserId(contestId, userId);
     }
 }

@@ -6,9 +6,12 @@
         <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
                 <title>向阳小队专版OJ</title>
-                <link rel = "stylesheet" type = "text/css" href = "css/login.css"/>
-                <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script> <!-- 你必须先引入jQuery1.8或以上版本 -->
-                <script src="layer/layer.js"></script>
+                <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/login.css" />
+                <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/comm/layui/css/layui.css" />
+                <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/comm/layui/css/modules/layer/default/layer.css" />
+                <script src="${pageContext.request.contextPath}/comm/layui/layui.js" charset="utf-8"></script>
+                <script src="${pageContext.request.contextPath}/comm/jquery/jquery-2.1.4.js"></script>
+                <script src="${pageContext.request.contextPath}/comm/layer/layer.js"></script>
                 <c:if test="${not empty info}">
                         <script>layer.msg('${info}')</script>
                         <c:remove var="info" />

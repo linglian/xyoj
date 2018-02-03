@@ -24,6 +24,8 @@ import javax.servlet.http.HttpServletResponse;
     @WebInitParam(name = "action_factory", value = "com.oj.linglian.factoryImpl.IQuestionFactoryImpl"),
     @WebInitParam(name = "getList_from", value = "index.jsp"),
     @WebInitParam(name = "getList_to", value = "showQuestion.jsp"),
+    @WebInitParam(name = "push_from", value = "pushQuestion.jsp"),
+    @WebInitParam(name = "push_to", value = "showQuestion.jsp"),
     @WebInitParam(name = "get_from", value = "QuestionAction?method=getList"),
     @WebInitParam(name = "get_to", value = "question.jsp")})
 public class QuestionAction extends HttpServlet {

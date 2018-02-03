@@ -10,6 +10,10 @@ public class User {
     private String score;
     private String lastCode;
     private String lastQuestionId;
+    private String lvl;
+    private String param;
+    private String name;
+    private String lastLogin;
 
     public String getUserId() {
         return userId;
@@ -83,9 +87,41 @@ public class User {
         this.lastQuestionId = lastQuestionId;
     }
 
+    public String getLvl() {
+        return lvl;
+    }
+
+    public void setLvl(String lvl) {
+        this.lvl = lvl;
+    }
+
+    public String getParam() {
+        return param;
+    }
+
+    public void setParam(String param) {
+        this.param = param;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastLogin() {
+        return lastLogin;
+    }
+
+    public void setLastLogin(String lastLogin) {
+        this.lastLogin = lastLogin;
+    }
+
     @Override
     public String toString() {
-        return "User [userId=" + userId + ", password=" + password + ", email=" + email + ", phone=" + phone + ", sex=" + sex + ", passQuestions=" + passQuestions + ", score=" + score + ", lastCode=" + lastCode + ", lastQuestionId=" + lastQuestionId + ", ]";
+        return "User [userId=" + userId + ", password=" + password + ", email=" + email + ", phone=" + phone + ", sex=" + sex + ", passQuestions=" + passQuestions + ", score=" + score + ", lastCode=" + lastCode + ", lastQuestionId=" + lastQuestionId + ", lvl=" + lvl + ", param=" + param + ", name=" + name + ", lastLogin=" + lastLogin + ", ]";
     }
 
 }
